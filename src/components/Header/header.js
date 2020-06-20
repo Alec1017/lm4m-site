@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import Hamburger from './hamburger'
+import logoLight from "../../images/logo_light.png"
 
 
 const Header = ({ siteTitle }) => {
@@ -10,9 +10,16 @@ const Header = ({ siteTitle }) => {
   return (
     <header className="header">
       <div className="header__inner">
-        <div className="header__logo">
-          <Link><h1>{siteTitle}</h1></Link>
-        </div>
+        <Link>
+          <div className="header__title">
+            <div className="header__logo">
+              <img src={logoLight} />
+            </div>
+            <div className="header__text">
+              <h1>{siteTitle}</h1>
+            </div>
+          </div>
+        </Link>
         <div className={`header__hamburger ${toggled ? 'toggled-hamburger' : ''}`} onClick={() => setToggled(!toggled)}>
           <span className="header__hamburger__line"></span>
           <span className="header__hamburger__line"></span>

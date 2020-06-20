@@ -12,8 +12,9 @@ export const HeroContainer = styled.div`
 `
 
 export const HeroImageContainer = styled.div`
-  background-image: url(${props => props});
+  background-image: url(${props => props.ImgSrc});
   width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
 `

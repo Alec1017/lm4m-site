@@ -5,7 +5,16 @@
   width: 100%;
   z-index: 999;
   top: 0;
-  box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.5);
+  //box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.5);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   &__inner {
     padding: 0 11%;
@@ -15,15 +24,17 @@
   }
 
   &__title {
-    
+    display: flex;
   }
 
   &__logo {
-    // display: inline-block
+    padding-right: 0.5rem;
+    width: 33px;
   }
 
   &__text {
-
+    @include font($size: 0.9rem);
+    color: -color(white);
   }
   
   &__hamburger {
@@ -59,9 +70,10 @@
     top: 0;
     right: 0;
     width: 8rem;
+    text-align: left;
 
-    padding: 50px;
-    padding-top: 125px;
+    padding: 3rem;
+    padding-top: 6.5rem;
     
     background: -color(cream);
     
@@ -71,8 +83,16 @@
 
 
     li {
-      padding: 10px 0;
       font-size: 22px;
+    }
+  }
+
+  &__link {
+    @include font($font: fira-sans, $weight: 'bold', $size: 1.8rem);
+    padding-bottom: 20px;
+
+    a {
+      color: -color(blue);
     }
   }
 
@@ -80,7 +100,7 @@
     
     .header__hamburger__line {
       opacity: 1;
-      background: #232323;
+      background: -color(blue);
 
       &:nth-child(1) {
         transform: translate(0, 8px) rotate(45deg);

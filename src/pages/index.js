@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 
 const Homepage = ({ data }) => {
   const homepageData = data.takeshape.getHomepage
-  console.log(homepageData.hero.image.path)
   return (
     <Layout>
       <SEO title={homepageData.title} />
