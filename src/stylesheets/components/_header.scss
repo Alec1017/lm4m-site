@@ -1,11 +1,15 @@
 .header {
-  background: -color(blue);
+  height: 6rem;
+  background: none;
+  box-shadow: none;
   text-align: center;
   position: fixed;
   width: 100%;
   z-index: 999;
   top: 0;
-  //box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.5);
+
+  transition: background 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
 
   img {
     max-width: 100%;
@@ -120,4 +124,9 @@
   .toggled-list {
     transform: none;
   }
+}
+
+.scrolling {
+  background: -color(blue);
+  box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.5);
 }
