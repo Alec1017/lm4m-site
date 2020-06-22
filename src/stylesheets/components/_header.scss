@@ -39,7 +39,7 @@
 
   &__text {
     @include font($size: 0.85rem);
-    color: -color(white);
+    color: -color(cream);
     padding-top:0.2rem;
   }
   
@@ -55,7 +55,7 @@
     margin-bottom: 5px;
     position: relative;
     
-    background: -color(white);
+    background: -color(cream);
     border-radius: 3px;
     
     z-index: 1;

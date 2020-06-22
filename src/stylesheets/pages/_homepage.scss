@@ -1,22 +1,45 @@
 .homepage {
-  // background: -color(green);
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 .belief {
 
   &__inner {
     padding: 0 11%;
+    background: -color(green);
+    margin-top: -2px;
+  }
+
+  &__divider {
+    img {
+      display: block;
+      width: 100%
+    }
   }
 
   &__divider--top {
-    // transform: translate(0, -100%)
-    // position: relative;
-    // top: -10rem;
-    margin-top: -10rem;
+    margin-top: -4rem;
+  }
+
+  &__divider--bottom {
+    transform: rotate(180deg);
+    margin-top: -2px;
+  }
+
+  &__content {
+    padding-top: 2.5rem;
+  }
+
+  &__title {
+    @include font($weight: 'bold', $size: 2rem);
+    color: -color(cream);
+  }
+
+  &__text {
+    @include font(fira-sans, $weight: 'light', $size: 1rem);
+    color: -color(cream);
+
+    padding-top: 1rem;
+    line-height: 1.4rem;
   }
 }

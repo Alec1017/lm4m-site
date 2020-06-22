@@ -5,7 +5,7 @@ import { getImageUrl } from "takeshape-routing"
 const Hero = ({ tagline, imagePath }) => {
   return (
     <div className="hero">
-      <div class="hero__background">
+      <div className="hero__background">
         <img src={getImageUrl(imagePath)} />
       </div>
       <div className="hero__content"> 
