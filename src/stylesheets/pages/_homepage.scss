@@ -7,7 +7,6 @@
   &__inner {
     padding: 0 11%;
     background: -color(green);
-    margin-top: -2px;
   }
 
   &__divider {
@@ -19,11 +18,12 @@
 
   &__divider--top {
     margin-top: -4rem;
+    margin-bottom: -2px;
   }
 
   &__divider--bottom {
-    transform: rotate(180deg);
     margin-top: -2px;
+    margin-bottom: -4rem;
   }
 
   &__content {
@@ -66,4 +66,33 @@
     left: -2.5rem;
     transform: rotate(-38deg);
   }
+}
+
+.map {
+  background: -color(cream);
+
+  &__inner {
+    padding: 0 11%;
+    padding-bottom: 10rem;
+  }
+
+  &__content {
+    padding-top: 6rem;
+  }
+
+  &__title {
+    @include font($weight: 'bold', $size: 2rem);
+    color: -color(green);
+  }
+
+  &__subtitle {
+    @include font($font: fira-sans, $size: 0.95rem);
+    color: -color(blue);
+    padding-top: 1rem;
+  }
+
+  &__image {
+    
+  }
+
 }

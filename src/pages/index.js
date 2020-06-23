@@ -7,6 +7,7 @@ import Hero from "../components/Hero/Hero"
 import SEO from "../components/seo"
 
 import GreenDivider from "../images/backgrounds/mobile/green_divider_top.png"
+import GreenDividerBottom from "../images/backgrounds/mobile/green_divider_bottom.png"
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
 const Homepage = ({ data }) => {
@@ -23,8 +24,6 @@ const Homepage = ({ data }) => {
       <div className="homepage">
         <div className="homepage__inner">
 
-
-
           <div className="belief">
             <div className="belief__divider belief__divider--top">
               <img src={GreenDivider} />
@@ -34,25 +33,27 @@ const Homepage = ({ data }) => {
                 <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
                 <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
               </div>
-
               <div className="belief__image__content">
                 <img className="belief__sticker" src={OrangeTab} />
                 <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
               </div> 
-
             </div>
-            
             <div className="belief__divider belief__divider--bottom">
-              <img src={GreenDivider} />
+              <img src={GreenDividerBottom} />
             </div>
           </div>
-
-
-
 
           <div className="map">
-
+            <div className="map__inner">
+              <div className="map__content">
+                <div className="map__title">We've had an impact around the world.</div>
+                <div className="map__subtitle">See the rest of Our Work</div>
+                <div className="map__image"></div>
+              </div>
+            </div>
           </div>
+
+
           <div className="quote">
 
           </div>
