@@ -1,14 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { getImageUrl } from "takeshape-routing"
 
 import Layout from "../components/layout"
 import Hero from "../components/Hero/Hero"
 import SEO from "../components/seo"
 
-import TopDivider from "../images/backgrounds/mobile/green_divider_top.png"
+import GreenDivider from "../images/backgrounds/mobile/green_divider_top.png"
+import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
 const Homepage = ({ data }) => {
   const homepageData = data.takeshape.getHomepage
+
+  console.log(homepageData.beliefSection.beliefTitle.blocks[0].text)
   return (
     <Layout>
       <SEO title={homepageData.title} />
@@ -23,20 +27,23 @@ const Homepage = ({ data }) => {
 
           <div className="belief">
             <div className="belief__divider belief__divider--top">
-              <img src={TopDivider} />
+              <img src={GreenDivider} />
             </div>
             <div className="belief__inner">
-              {/* <div className="belief__content">
-                <div className="belief__title">{homepageData.beliefSection.title.blocks[0].text}</div>
-                <div className="belief__text" dangerouslySetInnerHTML={{ __html: homepageData.beliefSection.textHtml }} />
+              <div className="belief__content">
+                <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
+                <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
               </div>
-              <div className="belief__image">
-                <img src={homepageData.beliefSection.image.path} />
-              </div> */}
+
+              <div className="belief__image__content">
+                <img className="belief__sticker" src={OrangeTab} />
+                <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
+              </div> 
+
             </div>
             
             <div className="belief__divider belief__divider--bottom">
-              <img src={TopDivider} />
+              <img src={GreenDivider} />
             </div>
           </div>
 
@@ -80,8 +87,8 @@ export const query = graphql`
             title
             uploadStatus
           }
-          textHtml
-          title
+          beliefText
+          beliefTitle
         }
       }
     }
