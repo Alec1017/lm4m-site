@@ -1,0 +1,66 @@
+.footer {
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__wrapper {
+    background: -color(yellow);
+  }
+
+  &__title {
+    display: flex;
+    padding-bottom: 2rem;
+  }
+
+  &__logo {
+    padding-right: 0.5rem;
+    width: 62px;
+  }
+
+  &__text {
+    @include font($size: 1.2rem, $weight: 'bold');
+    color: -color(blue);
+    padding-top: 0.5rem;
+  }
+  
+  &__list {
+    text-align: left;
+    padding-bottom: 3rem;
+  }
+
+  &__social {
+    display: flex;
+    padding-bottom: 0.5rem;
+  }
+
+  &__link {
+    @include font($font: fira-sans, $weight: 'bold', $size: 1.8rem);
+    padding-bottom: 1.1rem;
+
+    a {
+      color: -color(blue);
+    }
+  }
+
+  &__social__link {
+    padding-right: 1rem;
+  }
+
+  &__scout {
+    @include font($font: fira-sans, $size: 1.1rem);
+    color: -color(blue);
+
+    padding-bottom: 1rem;
+
+    a {
+      text-decoration: underline;
+      color: -color(blue);
+    }
+  }
+}
