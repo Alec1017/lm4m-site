@@ -1,19 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { getImageUrl } from "takeshape-routing"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Hero from "../components/Hero/Hero"
 import SEO from "../components/seo"
+import Divider from "../components/divider"
+import Inner from "../components/inner"
 
-import GreenDivider from "../images/backgrounds/mobile/green_divider_top.png"
-import GreenDividerBottom from "../images/backgrounds/mobile/green_divider_bottom.png"
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
 const Homepage = ({ data }) => {
   const homepageData = data.takeshape.getHomepage
 
-  console.log(homepageData.beliefSection.beliefTitle.blocks[0].text)
   return (
     <Layout>
       <SEO title={homepageData.title} />
@@ -25,37 +25,47 @@ const Homepage = ({ data }) => {
         <div className="homepage__inner">
 
           <div className="belief">
-            <div className="belief__divider belief__divider--top">
-              <img src={GreenDivider} />
+            <Divider color="green" type="top" />
+            <div className="belief__wrapper">
+              <Inner>
+                <div className="belief__content">
+                  <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
+                  <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
+                </div>
+                <div className="belief__image__content">
+                  <img className="belief__sticker" src={OrangeTab} />
+                  <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
+                </div> 
+              </Inner>
             </div>
-            <div className="belief__inner">
-              <div className="belief__content">
-                <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
-                <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
-              </div>
-              <div className="belief__image__content">
-                <img className="belief__sticker" src={OrangeTab} />
-                <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
-              </div> 
-            </div>
-            <div className="belief__divider belief__divider--bottom">
-              <img src={GreenDividerBottom} />
-            </div>
+            <Divider color="green" type="bottom" />
           </div>
 
           <div className="map">
-            <div className="map__inner">
-              <div className="map__content">
-                <div className="map__title">We've had an impact around the world.</div>
-                <div className="map__subtitle">See the rest of Our Work</div>
-                <div className="map__image"></div>
-              </div>
+            <div className="map__wrapper">
+              <Inner>
+                <div className="map__content">
+                  <div className="map__title">{homepageData.mapSection.title.blocks[0].text}</div>
+                  <div className="map__subtitle">See the rest of <Link to="/work">Our Work</Link></div>
+                  <div className="map__image">
+                    <img src={getImageUrl(homepageData.mapSection.image.path)} />
+                  </div>
+                </div>
+              </Inner>
             </div>
           </div>
 
-
           <div className="quote">
-
+            <Divider color="blue" type="top" className="test" />
+            <div className="quote__wrapper">
+              <Inner>
+                <div className="quote__content">
+                  <div className="quote__text">{homepageData.quoteSection.quote.blocks[0].text}</div>
+                  <div className="quote__source">{homepageData.quoteSection.source}</div>
+                </div>
+              </Inner>
+            </div>
+            <Divider color="blue" type="bottom" />
           </div>
         </div>
       </div>
@@ -77,19 +87,20 @@ export const query = graphql`
         }
         beliefSection {
           image {
-            _id
-            caption
-            credit
-            description
-            filename
-            mimeType
             path
-            sourceUrl
-            title
-            uploadStatus
           }
           beliefText
           beliefTitle
+        }
+        mapSection {
+          title
+          image {
+            path
+          }
+        }
+        quoteSection {
+          quote
+          source
         }
       }
     }

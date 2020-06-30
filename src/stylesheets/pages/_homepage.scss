@@ -1,29 +1,7 @@
-.homepage {
-
-}
-
 .belief {
 
-  &__inner {
-    padding: 0 11%;
+  &__wrapper {
     background: -color(green);
-  }
-
-  &__divider {
-    img {
-      display: block;
-      width: 100%
-    }
-  }
-
-  &__divider--top {
-    margin-top: -4rem;
-    margin-bottom: -2px;
-  }
-
-  &__divider--bottom {
-    margin-top: -2px;
-    margin-bottom: -4rem;
   }
 
   &__content {
@@ -71,13 +49,13 @@
 .map {
   background: -color(cream);
 
-  &__inner {
-    padding: 0 11%;
-    padding-bottom: 10rem;
+  a {
+    color: -color(blue);
   }
 
   &__content {
     padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   &__title {
@@ -92,7 +70,33 @@
   }
 
   &__image {
-    
+    padding-top: 2rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.quote {
+
+  &__wrapper {
+    background: -color(blue);
   }
 
+  &__text {
+    @include font($size: 1.2rem);
+    color: -color(cream);
+    line-height: 150%;
+  }
+
+  &__source {
+    @include font($size: 1.2rem);
+    color: -color(cream);
+
+    padding-top: 3.5rem;
+    text-align: center;
+  }
 }

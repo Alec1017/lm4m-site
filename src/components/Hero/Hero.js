@@ -1,6 +1,8 @@
 import React from "react"
 import { getImageUrl } from "takeshape-routing"
 
+import Inner from "../../components/inner"
+
 
 const Hero = ({ tagline, imagePath }) => {
   return (
@@ -8,9 +10,11 @@ const Hero = ({ tagline, imagePath }) => {
       <div className="hero__background">
         <img src={getImageUrl(imagePath)} />
       </div>
-      <div className="hero__content"> 
-        <div className="hero__title">{tagline}</div>
-      </div>
+      <Inner>
+        <div className="hero__content"> 
+          <div className="hero__title">{tagline}</div>
+        </div>
+      </Inner>
     </div>
   )
 }

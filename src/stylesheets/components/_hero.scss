@@ -26,10 +26,6 @@
     }
   }
 
-  &__content {
-    padding: 0 11%;
-  }
-
   &__title {
     @include font($weight: 'bold', $size: 2.4rem);
     color: -color(white)

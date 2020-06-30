@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import logoLight from "../../images/logo_light.png"
+import Inner from "../inner"
 
 
 const Header = ({ siteTitle }) => {
@@ -29,42 +30,44 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header className={`header ${isScrolling ? 'scrolling' : ''}`}>
-      <div className="header__inner">
-        <Link to="/">
-          <div className="header__title">
-            <div className="header__logo">
-              <img src={logoLight} />
+      <div className="header__wrapper">
+        <Inner className="header__inner">
+          <Link to="/">
+            <div className="header__title">
+              <div className="header__logo">
+                <img src={logoLight} />
+              </div>
+              <div className="header__text">{siteTitle}</div>
             </div>
-            <div className="header__text">{siteTitle}</div>
+          </Link>
+          <div className={`header__hamburger ${toggled ? 'toggled-hamburger' : ''}`} onClick={() => setToggled(!toggled)}>
+            <span className="header__hamburger__line"></span>
+            <span className="header__hamburger__line"></span>
+            <span className="header__hamburger__line"></span>
           </div>
-        </Link>
-        <div className={`header__hamburger ${toggled ? 'toggled-hamburger' : ''}`} onClick={() => setToggled(!toggled)}>
-          <span className="header__hamburger__line"></span>
-          <span className="header__hamburger__line"></span>
-          <span className="header__hamburger__line"></span>
-        </div>
-        <ul className={`header__list ${toggled ? 'toggled-list' : ''}`}>
-          <li>
-            <div className="header__link">
-              <Link to="/work">Our Work</Link>
-            </div>
-          </li>
-          <li>
-            <div className="header__link">
-              <Link className="nav-item" to="/about">About Us</Link>
-            </div>
-          </li>
-          <li>
-            <div className="header__link">
-              <Link className="nav-item" to="/contact">Contact</Link>
-            </div>
-          </li>
-          <li>
-            <div className="header__link">
-              <Link className="nav-item" to="/donate">Donate</Link>
-            </div>
-          </li>
-        </ul>
+          <ul className={`header__list ${toggled ? 'toggled-list' : ''}`}>
+            <li>
+              <div className="header__link">
+                <Link to="/work">Our Work</Link>
+              </div>
+            </li>
+            <li>
+              <div className="header__link">
+                <Link to="/about">About Us</Link>
+              </div>
+            </li>
+            <li>
+              <div className="header__link">
+                <Link to="/contact">Contact</Link>
+              </div>
+            </li>
+            <li>
+              <div className="header__link">
+                <Link to="/donate">Donate</Link>
+              </div>
+            </li>
+          </ul>
+        </Inner>
       </div>
     </header>
   )

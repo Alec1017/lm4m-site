@@ -20,9 +20,11 @@
     text-decoration: none;
   }
 
-  &__inner {
-    padding: 0 11%;
+  &__wrapper {
     padding-top: 3rem;
+  }
+
+  &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
