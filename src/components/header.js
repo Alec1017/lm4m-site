@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
-import logoLight from "../../images/logo_light.png"
-import Inner from "../inner"
+import logoLight from "../images/logo_light.png"
+import Inner from "./inner"
 
 
 const Header = ({ siteTitle }) => {

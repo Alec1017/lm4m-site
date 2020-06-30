@@ -1,7 +1,7 @@
 import React from "react"
 import { getImageUrl } from "takeshape-routing"
 
-import Inner from "../../components/inner"
+import Inner from "./inner"
 
 
 const Hero = ({ tagline, imagePath }) => {

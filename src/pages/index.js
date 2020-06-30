@@ -4,12 +4,13 @@ import { getImageUrl } from "takeshape-routing"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Hero from "../components/Hero/Hero"
+import Hero from "../components/Hero"
 import SEO from "../components/seo"
 import Divider from "../components/divider"
 import Inner from "../components/inner"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
+import YellowUnderline from "../images/labels/yellow_underline.png"
 
 const Homepage = ({ data }) => {
   const homepageData = data.takeshape.getHomepage
@@ -45,7 +46,17 @@ const Homepage = ({ data }) => {
             <div className="map__wrapper">
               <Inner>
                 <div className="map__content">
-                  <div className="map__title">{homepageData.mapSection.title.blocks[0].text}</div>
+                  <div className="map__title">
+                    {homepageData.mapSection.title.blocks[0].text.split(' ').slice(0, -1).join(' ')}
+                    &nbsp;
+                    <div style={{
+                      display: 'inline-block',
+                      backgroundImage: `url(${YellowUnderline})`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center bottom',
+                      backgroundSize: 'contain'
+                    }}>{homepageData.mapSection.title.blocks[0].text.split(' ').slice(-1)[0]}</div>
+                  </div>
                   <div className="map__subtitle">See the rest of <Link to="/work">Our Work</Link></div>
                   <div className="map__image">
                     <img src={getImageUrl(homepageData.mapSection.image.path)} />
@@ -56,7 +67,7 @@ const Homepage = ({ data }) => {
           </div>
 
           <div className="quote">
-            <Divider color="blue" type="top" className="test" />
+            <Divider color="blue" type="top" />
             <div className="quote__wrapper">
               <Inner>
                 <div className="quote__content">
