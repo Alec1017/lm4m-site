@@ -8,6 +8,7 @@ import Hero from "../components/Hero"
 import SEO from "../components/seo"
 import Divider from "../components/divider"
 import Inner from "../components/inner"
+import Highlight from "../components/highlight"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
 import YellowUnderline from "../images/labels/yellow_underline.png"
@@ -49,13 +50,9 @@ const Homepage = ({ data }) => {
                   <div className="map__title">
                     {homepageData.mapSection.title.blocks[0].text.split(' ').slice(0, -1).join(' ')}
                     &nbsp;
-                    <div style={{
-                      display: 'inline-block',
-                      backgroundImage: `url(${YellowUnderline})`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'center bottom',
-                      backgroundSize: 'contain'
-                    }}>{homepageData.mapSection.title.blocks[0].text.split(' ').slice(-1)[0]}</div>
+                    <Highlight type="yellow">
+                      {homepageData.mapSection.title.blocks[0].text.split(' ').slice(-1)[0]}
+                    </Highlight>
                   </div>
                   <div className="map__subtitle">See the rest of <Link to="/work">Our Work</Link></div>
                   <div className="map__image">

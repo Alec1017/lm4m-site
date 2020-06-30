@@ -48,6 +48,8 @@
 
 .map {
   background: -color(cream);
+  position: relative;
+  z-index: -2;
 
   a {
     color: -color(blue);
