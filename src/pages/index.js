@@ -11,7 +11,6 @@ import Inner from "../components/inner"
 import Highlight from "../components/highlight"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
-import YellowUnderline from "../images/labels/yellow_underline.png"
 
 const Homepage = ({ data }) => {
   const homepageData = data.takeshape.getHomepage
@@ -75,6 +74,29 @@ const Homepage = ({ data }) => {
             </div>
             <Divider color="blue" type="bottom" />
           </div>
+
+          <div className="stories">
+            <div className="stories__wrapper">
+              <Inner>
+                <div className="stories__content">
+                  <div className="stories__title">
+                    {homepageData.storiesSection.title.split(' ').slice(0, -1).join(' ')}
+                    &nbsp;
+                    <Highlight type="yellow">
+                      {homepageData.storiesSection.title.split(' ').slice(-1)[0]}
+                    </Highlight>
+                  </div>
+                  {homepageData.storiesSection.text.blocks.map((value, index) => {
+                    return <div className="stories__text" key={index}>{value.text}</div>
+                  })}
+                  <div className="stories__image">
+                    <img src={getImageUrl(homepageData.storiesSection.image.path)} />
+                  </div>
+                </div>
+              </Inner>
+            </div>
+          </div>
+
         </div>
       </div>
     </Layout>
@@ -109,6 +131,13 @@ export const query = graphql`
         quoteSection {
           quote
           source
+        }
+        storiesSection {
+          title
+          text
+          image {
+            path
+          }
         }
       }
     }
