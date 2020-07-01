@@ -16,6 +16,7 @@ const Footer = ({children, light, backgroundColor}) => {
       takeshape {
         getSiteSettings {
           siteTitle
+          donateUrl
         }
       }
     }
@@ -62,7 +63,7 @@ const Footer = ({children, light, backgroundColor}) => {
             </li>
             <li>
               <div className={`footer__link ${light === true ? 'footer__link--light' : 'footer__link--dark'}`}>
-                <Link to="/donate">Donate</Link>
+                <a href={siteData.donateUrl}>Donate</a>
               </div>
             </li>
           </ul>

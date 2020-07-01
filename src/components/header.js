@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import logoLight from "../images/logo_light.png"
+import Facebook from "../images/vectors/facebook.svg"
+import Instagram from "../images/vectors/instagram.svg"
+import LinkedIn from "../images/vectors/linkedin.svg"
 import Inner from "./inner"
 
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, donateURL }) => {
   const [toggled, setToggled] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const [prevScroll, setPrevScroll] = useState(0)
@@ -63,9 +66,26 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <div className="header__link">
-                <Link to="/donate">Donate</Link>
+                <a href={donateURL}>Donate</a>
               </div>
             </li>
+            <div className="header__social">
+              <div className="header__social__link">
+                <a>
+                  <Facebook />
+                </a>
+              </div>
+              <div className="header__social__link">
+                <a>
+                  <Instagram />
+                </a>
+              </div>
+              <div className="header__social__link">
+                <a>
+                  <LinkedIn />
+                </a>
+              </div>
+            </div>
           </ul>
         </Inner>
       </div>

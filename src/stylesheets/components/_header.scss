@@ -1,9 +1,8 @@
 .header {
-  height: 6rem;
   background: none;
   box-shadow: none;
   text-align: center;
-  position: fixed;
+  // position: fixed; // make fixed when in desktop mode
   width: 100%;
   z-index: 999;
   top: 0;
@@ -48,6 +47,7 @@
   &__hamburger {
     width:33px;
     height: 100%;
+    z-index: 3;
   }
 
   &__hamburger__line {
@@ -77,10 +77,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 8rem;
+    width: 89%;
+    height: 100vh;
     text-align: left;
+    z-index: 2;
 
-    padding: 3rem;
+    padding-left: 11%;
     padding-top: 6.5rem;
     
     background: -color(cream);
@@ -101,6 +103,18 @@
 
     a {
       color: -color(blue);
+    }
+  }
+
+  &__social {
+    padding-top: 5rem;
+  }
+
+  &__social__link {
+    padding-bottom: 1rem;
+
+    svg {
+      fill: -color(blue);
     }
   }
 
@@ -131,6 +145,6 @@
 }
 
 .scrolling {
-  background: -color(blue);
-  box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.5);
+  // background: -color(blue);
+  // box-shadow: 0 0.2rem 0.8rem rgnba(0,0,0,0.5);
 }

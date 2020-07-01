@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
       takeshape {
         getSiteSettings {
           siteTitle
+          donateUrl
         }
       }
     }
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
   const siteData = data.takeshape.getSiteSettings
   return (
     <>
-      <Header siteTitle={siteData.siteTitle} />
+      <Header siteTitle={siteData.siteTitle} donateURL={siteData.donateUrl} />
       <main>{children}</main>
     </>
   )
