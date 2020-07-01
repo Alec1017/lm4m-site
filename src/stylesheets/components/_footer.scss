@@ -9,8 +9,16 @@
     text-decoration: none;
   }
 
-  &__wrapper {
+  &__wrapper--yellow {
     background: -color(yellow);
+  }
+
+  &__wrapper--blue {
+    background: -color(blue);
+  }
+
+  &__wrapper--green {
+    background: -color(green);
   }
 
   &__title {
@@ -21,12 +29,28 @@
   &__logo {
     padding-right: 0.5rem;
     width: 62px;
+
+    display: none;
+    visibility: hidden;
+  }
+
+  &__logo--visible {
+    display: block;
+    visibility: visible;
   }
 
   &__text {
     @include font($size: 1.2rem, $weight: 'bold');
-    color: -color(blue);
+  
     padding-top: 0.5rem;
+  }
+
+  &__text--light {
+    color: -color(cream);
+  }
+
+  &__text--dark {
+    color: -color(blue);
   }
   
   &__list {
@@ -42,7 +66,15 @@
   &__link {
     @include font($font: fira-sans, $weight: 'bold', $size: 1.8rem);
     padding-bottom: 1.1rem;
+  }
 
+  &__link--light {
+    a {
+      color: -color(cream);
+    }
+  }
+
+  &__link--dark {
     a {
       color: -color(blue);
     }
@@ -52,14 +84,36 @@
     padding-right: 1rem;
   }
 
+  &__svg--light {
+    fill: -color(cream);
+  }
+
+  &__svg--dark {
+    fill: -color(blue);
+  }
+
   &__scout {
     @include font($font: fira-sans, $size: 1.1rem);
-    color: -color(blue);
 
     padding-bottom: 1rem;
 
     a {
       text-decoration: underline;
+    }
+  }
+
+  &__scout--light {
+    color: -color(cream);
+
+    a {
+      color: -color(cream);
+    }
+  }
+
+  &__scout--dark {
+    color: -color(blue);
+
+    a {
       color: -color(blue);
     }
   }

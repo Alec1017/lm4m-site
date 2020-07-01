@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import Divider from "../components/divider"
 import Inner from "../components/inner"
 import Highlight from "../components/highlight"
+import Footer from "../components/footer"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
@@ -96,6 +97,8 @@ const Homepage = ({ data }) => {
               </Inner>
             </div>
           </div>
+
+          <Footer backgroundColor="yellow" />
 
         </div>
       </div>
