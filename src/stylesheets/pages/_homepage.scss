@@ -44,6 +44,60 @@
     left: -2.5rem;
     transform: rotate(-38deg);
   }
+
+  @include for-tablet-up {
+    &__inner {
+      display: flex;
+      position: relative;
+      flex-direction: row-reverse;
+    }
+
+    &__content {
+      padding-left: 5rem;
+      width: 50%;
+
+      a {
+        text-decoration: none;
+        color: -color(blue);
+
+        transition: color 0.15s ease-in-out;
+      }
+
+      a:hover {
+          color: -color(yellow);
+      }
+      
+    }
+
+    &__image__content {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    &__donate {
+      @include font($font: fira-sans, $size: 1.2rem, $weight: 'bold');
+      display: inline-block;
+
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+  
+      background: -color(yellow);
+      border-radius: 10px;
+
+      border: -color(yellow);
+      border-width: 1px;
+      border-style: solid;
+
+      transition: background-color 0.15s ease-in-out;
+
+      &:hover {
+        background: -color(blue);
+      }
+
+    }
+
+  }
+
 }
 
 .map {
@@ -56,8 +110,7 @@
   }
 
   &__content {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding: 3rem 0;
   }
 
   &__title {
@@ -83,9 +136,14 @@
 }
 
 .quote {
+  background: -color(cream);
 
   &__wrapper {
     background: -color(blue);
+  }
+
+  &__content {
+    padding: 1rem 0;
   }
 
   &__text {
@@ -112,7 +170,7 @@
   }
 
   &__content {
-    padding-top: 6rem;
+    padding: 3rem 0;
   }
 
   &__title {
@@ -134,7 +192,6 @@
 
   &__image {
     padding-top: 4rem;
-    padding-bottom: 4rem;
     position: relative;
 
     img {

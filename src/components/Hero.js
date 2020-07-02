@@ -3,6 +3,7 @@ import { getImageUrl } from "takeshape-routing"
 
 import Inner from "./inner"
 import Highlight from "./highlight"
+import Divider from "./divider"
 
 
 const Hero = ({ tagline, imagePath }) => {
@@ -22,6 +23,7 @@ const Hero = ({ tagline, imagePath }) => {
           </div>
         </div>
       </Inner>
+      <Divider color="green" type="top" />
     </div>
   )
 }

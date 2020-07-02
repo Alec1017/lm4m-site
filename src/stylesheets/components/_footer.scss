@@ -1,4 +1,5 @@
 .footer {
+  background: -color(cream);
   
   img {
     max-width: 100%;
@@ -19,6 +20,10 @@
 
   &__wrapper--green {
     background: -color(green);
+  }
+
+  &__inner {
+    padding-top: 1rem;
   }
 
   &__title {

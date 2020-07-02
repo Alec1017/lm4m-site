@@ -27,12 +27,16 @@ const Homepage = ({ data }) => {
         <div className="homepage__inner">
 
           <div className="belief">
-            <Divider color="green" type="top" />
             <div className="belief__wrapper">
-              <Inner>
+              <Inner className="belief__inner">
                 <div className="belief__content">
                   <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
                   <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
+                  <a href="">
+                    <div className="belief__donate">
+                      Donate
+                    </div>
+                  </a>
                 </div>
                 <div className="belief__image__content">
                   <img className="belief__sticker" src={OrangeTab} />
@@ -40,11 +44,11 @@ const Homepage = ({ data }) => {
                 </div> 
               </Inner>
             </div>
-            <Divider color="green" type="bottom" />
           </div>
 
           <div className="map">
             <div className="map__wrapper">
+            <Divider color="green" type="bottom" />
               <Inner>
                 <div className="map__content">
                   <div className="map__title">
@@ -60,11 +64,11 @@ const Homepage = ({ data }) => {
                   </div>
                 </div>
               </Inner>
+              <Divider color="blue" type="top" />
             </div>
           </div>
 
           <div className="quote">
-            <Divider color="blue" type="top" />
             <div className="quote__wrapper">
               <Inner>
                 <div className="quote__content">
@@ -73,11 +77,11 @@ const Homepage = ({ data }) => {
                 </div>
               </Inner>
             </div>
-            <Divider color="blue" type="bottom" />
           </div>
 
           <div className="stories">
             <div className="stories__wrapper">
+              <Divider color="blue" type="bottom" />
               <Inner>
                 <div className="stories__content">
                   <div className="stories__title">
@@ -95,6 +99,7 @@ const Homepage = ({ data }) => {
                   </div>
                 </div>
               </Inner>
+              <Divider color="yellow" type="top" />
             </div>
           </div>
 

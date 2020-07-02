@@ -3,13 +3,11 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  margin-top: -4rem;
+  justify-content: space-between;
 
   &__background {
     background-color: -color(blue);
@@ -28,8 +26,26 @@
     }
   }
 
+  &__content {
+    padding-top: 30vh;
+  }
+
   &__title {
     @include font($weight: 'bold', $size: 2.4rem);
     color: -color(white)
+  }
+
+  @include for-tablet-up {
+    height: 100vh;
+
+    &__content {
+      padding-top: 40vh;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3.3rem);
+      color: -color(white)
+    }
+
   }
 }

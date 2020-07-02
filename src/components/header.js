@@ -66,7 +66,9 @@ const Header = ({ siteTitle, donateURL }) => {
             </li>
             <li>
               <div className="header__link">
-                <a href={donateURL}>Donate</a>
+                <a href={donateURL}>
+                  <div className="header__donate">Donate</div>
+                </a>
               </div>
             </li>
             <div className="header__social">

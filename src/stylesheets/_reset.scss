@@ -29,7 +29,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  overflow-x: hidden;
+  position: relative;
 }
 ol, ul {
 	list-style: none;
@@ -45,4 +47,7 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+html {
+  overflow-x: hidden;
 }

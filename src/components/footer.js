@@ -26,7 +26,7 @@ const Footer = ({children, light, backgroundColor}) => {
 
   return (
     <footer className="footer">
-      <Divider color={backgroundColor} type="top" />
+      {/* <Divider color={backgroundColor} type="top" /> */}
       <div className={`footer__wrapper footer__wrapper--${backgroundColor}`}>
         <Inner className="footer__inner">
           {children}

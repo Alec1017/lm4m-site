@@ -2,7 +2,6 @@
   background: none;
   box-shadow: none;
   text-align: center;
-  // position: fixed; // make fixed when in desktop mode
   width: 100%;
   z-index: 999;
   top: 0;
@@ -90,11 +89,6 @@
     transform-origin: 0% 0%;
     transform: translate(100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-
-
-    li {
-      font-size: 22px;
-    }
   }
 
   &__link {
@@ -142,9 +136,100 @@
   .toggled-list {
     transform: none;
   }
+
+  @include for-tablet-up {
+    position: fixed;
+
+    &__wrapper {
+      padding: 1.5rem 0;
+    }
+
+    &__logo {
+      width: 50px;
+    }
+
+    &__text {
+      @include font($size: 1.3rem);
+      color: -color(cream);
+      padding-top: 0.2rem;
+    }
+
+    &__hamburger {
+      display: none;
+      visibility: hidden;
+    }
+
+    &__list {
+      position: relative;
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      transition: none;
+      transform: none;
+      background: none;
+      text-align: none;
+
+      width: initial;
+      height: initial;
+      text-align: left;
+      z-index: 0;
+    }
+
+    &__link {
+      @include font($font: fira-sans, $size: 0.8rem);
+      padding-bottom: 0;
+      padding-left: 1.4rem;
+  
+      a {
+        color: -color(cream);
+      }
+    }
+
+    &__donate {
+      @include font($font: fira-sans, $size: 0.8rem, $weight: 'bold');
+      padding: 0.5rem 1rem;
+      color: -color(blue);
+      background: -color(cream);
+      border-radius: 30px;
+
+      border: -color(cream);
+      border-width: 1px;
+      border-style: solid;
+
+      transition: color 0.15s ease-in-out,
+                  border 0.15s ease-in-out,
+                  background-color 0.15s ease-in-out;
+
+      &:hover {
+        color: -color(cream);
+        background: -color(blue);
+
+        border: -color(blue);
+        border-width: 1px;
+        border-style: solid;
+      }
+
+    }
+
+    &__social {
+      display: none;
+      visibility: hidden;
+    }
+
+  }
 }
 
 .scrolling {
-  // background: -color(blue);
-  // box-shadow: 0 0.2rem 0.8rem rgnba(0,0,0,0.5);
+
+  @include for-tablet-up {
+    background: -color(blue);
+    box-shadow: 0 0.2rem 0.8rem rgnba(0,0,0,0.5);
+
+    .header__donate:hover {
+      border: -color(cream);
+      border-width: 1px;
+      border-style: solid;
+    }
+  }
 }
