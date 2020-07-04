@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 999;
   top: 0;
+  height: $mobile-header-height;
 
   transition: background 0.15s ease-in-out,
               box-shadow 0.15s ease-in-out;
@@ -224,7 +225,7 @@
 
   @include for-tablet-up {
     background: -color(blue);
-    box-shadow: 0 0.2rem 0.8rem rgnba(0,0,0,0.5);
+    box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.4);
 
     .header__donate:hover {
       border: -color(cream);

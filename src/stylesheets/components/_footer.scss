@@ -22,8 +22,8 @@
     background: -color(green);
   }
 
-  &__inner {
-    padding-top: 1rem;
+  &__content {
+    padding-top: 4rem;
   }
 
   &__title {
@@ -120,6 +120,40 @@
 
     a {
       color: -color(blue);
+    }
+  }
+
+  @include for-tablet-up {
+    &__inner {
+      padding-top: 0;
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 3rem;
+    }
+
+    &__title {
+      padding-bottom: 1rem;
+    }
+
+    &__text {
+      @include font($size: 1.3rem, $weight: 'bold');
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__link {
+      @include font($font: fira-sans, $weight: 'bold', $size: 1.2rem);
+      padding-bottom: 0;
+      padding-right: 1.5rem;
+    }
+
+    &__nav__social {
+      padding-top: 2rem;
     }
   }
 }

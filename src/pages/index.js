@@ -39,8 +39,10 @@ const Homepage = ({ data }) => {
                   </a>
                 </div>
                 <div className="belief__image__content">
-                  <img className="belief__sticker" src={OrangeTab} />
-                  <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
+                  <div className="belief__image__inner">
+                    <img className="belief__sticker" src={OrangeTab} />
+                    <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
+                  </div>
                 </div> 
               </Inner>
             </div>
@@ -84,16 +86,18 @@ const Homepage = ({ data }) => {
               <Divider color="blue" type="bottom" />
               <Inner>
                 <div className="stories__content">
-                  <div className="stories__title">
-                    {homepageData.storiesSection.title.split(' ').slice(0, -1).join(' ')}
-                    &nbsp;
-                    <Highlight type="yellow">
-                      {homepageData.storiesSection.title.split(' ').slice(-1)[0]}
-                    </Highlight>
+                  <div className="stories__text__wrapper">
+                    <div className="stories__title">
+                      {homepageData.storiesSection.title.split(' ').slice(0, -1).join(' ')}
+                      &nbsp;
+                      <Highlight type="yellow">
+                        {homepageData.storiesSection.title.split(' ').slice(-1)[0]}
+                      </Highlight>
+                    </div>
+                    {homepageData.storiesSection.text.blocks.map((value, index) => {
+                      return <div className="stories__text" key={index}>{value.text}</div>
+                    })}
                   </div>
-                  {homepageData.storiesSection.text.blocks.map((value, index) => {
-                    return <div className="stories__text" key={index}>{value.text}</div>
-                  })}
                   <div className="stories__image">
                     <img src={getImageUrl(homepageData.storiesSection.image.path)} />
                   </div>

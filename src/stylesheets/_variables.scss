@@ -1,4 +1,4 @@
-// fonts
+// Fonts
 $fonts: (
   fira-sans: ('Fira Sans', sans-serif),
   buenard: ('Buenard')
@@ -11,7 +11,7 @@ $font-weights: (
   bold: 700
 );
 
-// colors 
+// Colors 
 $colors: (
   black:      #000000,
   red:        #D61504,
@@ -21,3 +21,6 @@ $colors: (
   cream:      #F5F1E7,
   white:      #ffffff
 );
+
+// Constants
+$mobile-header-height: 80px;

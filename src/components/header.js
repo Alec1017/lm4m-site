@@ -8,7 +8,7 @@ import LinkedIn from "../images/vectors/linkedin.svg"
 import Inner from "./inner"
 
 
-const Header = ({ siteTitle, donateURL }) => {
+const Header = ({ siteTitle, facebookURL, instagramURL, linkedInURL, donateURL }) => {
   const [toggled, setToggled] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const [prevScroll, setPrevScroll] = useState(0)
@@ -73,17 +73,17 @@ const Header = ({ siteTitle, donateURL }) => {
             </li>
             <div className="header__social">
               <div className="header__social__link">
-                <a>
+                <a href={facebookURL}>
                   <Facebook />
                 </a>
               </div>
               <div className="header__social__link">
-                <a>
+                <a href={instagramURL}>
                   <Instagram />
                 </a>
               </div>
               <div className="header__social__link">
-                <a>
+                <a href={linkedInURL}>
                   <LinkedIn />
                 </a>
               </div>

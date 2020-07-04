@@ -11,6 +11,9 @@ const Layout = ({ children }) => {
       takeshape {
         getSiteSettings {
           siteTitle
+          facebookUrl
+          instagramUrl
+          linkedInUrl
           donateUrl
         }
       }
@@ -20,7 +23,13 @@ const Layout = ({ children }) => {
   const siteData = data.takeshape.getSiteSettings
   return (
     <>
-      <Header siteTitle={siteData.siteTitle} donateURL={siteData.donateUrl} />
+      <Header 
+        siteTitle={siteData.siteTitle} 
+        donateURL={siteData.donateUrl} 
+        facebookURL={siteData.facebookUrl} 
+        instagramURL={siteData.instagramUrl} 
+        linkedInURL={siteData.linkedInUrl} 
+      />
       <main>{children}</main>
     </>
   )
