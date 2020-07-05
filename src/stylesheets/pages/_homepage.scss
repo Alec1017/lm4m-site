@@ -1,4 +1,6 @@
 .belief {
+  position: relative;
+  z-index: 1;
 
   &__wrapper {
     background: -color(green);
@@ -47,6 +49,13 @@
     top: -0.5rem;
     left: -2.5rem;
     transform: rotate(-38deg);
+    width: 10rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__donate {
@@ -117,12 +126,50 @@
 
   }
 
+  @include for-desktop-up {
+    &__inner {
+      justify-content: space-between;
+    }
+
+    &__image__content {
+      width: 23rem;
+      height: 23rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      margin: initial;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3rem);
+    }
+
+    &__text {
+      @include font(fira-sans, $weight: 'light', $size: 1.1rem);
+  
+      padding-top: 1.3rem;
+      line-height: 1.55rem;
+    }
+
+    &__donate {
+      @include font($font: fira-sans, $size: 1.5rem, $weight: 'bold');
+      display: inline-block;
+      visibility: visible;
+
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+    }
+
+    &__sticker {
+      left: -3rem;
+      width: 13rem;
+    }
+  }
+
 }
 
 .map {
   background: -color(cream);
   position: relative;
-  z-index: -2;
 
   a {
     color: -color(blue);
@@ -163,10 +210,30 @@
       width: 40%;
     }
   }
+
+  @include for-desktop-up {
+    &__content {
+      padding: 7rem 0;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3rem);
+    }
+
+    &__subtitle {
+      @include font($font: fira-sans, $size: 1.1rem);
+      padding-top: 1.5rem;
+    }
+
+
+
+  }
 }
 
 .quote {
   background: -color(cream);
+  position: relative;
+  z-index: 1;
 
   &__wrapper {
     background: -color(blue);
@@ -195,6 +262,23 @@
       padding: 3rem 8rem;
     }
   }
+
+  @include for-desktop-up {
+    &__content {
+      padding: 5rem 8rem;
+    }
+
+    &__text {
+      @include font($size: 2.1rem);
+      line-height: 3rem;
+    }
+  
+    &__source {
+      @include font($size: 2.1rem);
+  
+      padding-top: 3.5rem;
+    }
+  }
 }
 
 .stories {
@@ -202,7 +286,6 @@
   &__wrapper {
     background: -color(cream);
     position: relative;
-    z-index: -2;
   }
 
   &__content {
@@ -257,5 +340,32 @@
       padding-top: 0;
       width: 20rem;
     }
+  }
+
+  @include for-desktop-up {
+    &__content {
+      padding-top: 5rem;
+      padding-bottom: 7rem;
+    }
+
+    &__text__wrapper {
+      width: 40%;
+      padding-top: 5rem;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3rem);
+    }
+
+    &__text {
+      @include font(fira-sans, $size: 1.1rem);
+
+      line-height: 1.55rem;
+    }
+
+    &__image {
+      width: 25rem;
+    }
+
   }
 }

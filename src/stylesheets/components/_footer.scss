@@ -1,5 +1,7 @@
 .footer {
   background: -color(cream);
+  position: relative;
+  z-index: 1;
   
   img {
     max-width: 100%;
@@ -69,7 +71,7 @@
   }
 
   &__link {
-    @include font($font: fira-sans, $weight: 'bold', $size: 1.8rem);
+    @include font($font: fira-sans, $size: 1.8rem);
     padding-bottom: 1.1rem;
   }
 
@@ -147,13 +149,44 @@
     }
 
     &__link {
-      @include font($font: fira-sans, $weight: 'bold', $size: 1.2rem);
+      @include font($font: fira-sans, $size: 1.2rem);
       padding-bottom: 0;
       padding-right: 1.5rem;
     }
 
     &__nav__social {
       padding-top: 2rem;
+    }
+  }
+
+  @include for-desktop-up {
+    &__logo {
+      width: 60px;
+    }
+
+    &__text {
+      @include font($size: 1.4rem, $weight: 'bold');
+    
+      padding-top: 0.5rem;
+    }
+
+    &__link {
+      @include font($font: fira-sans, $size: 1.4rem);
+
+      padding-right: 2rem;
+    }
+
+    &__social__link {
+      padding-right: 1.3rem;
+
+      svg {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &__content {
+      padding-bottom: 4rem;
     }
   }
 }

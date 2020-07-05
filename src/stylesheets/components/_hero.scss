@@ -43,8 +43,13 @@
 
     &__title {
       @include font($weight: 'bold', $size: 3.3rem);
-      color: -color(white)
     }
 
+  }
+
+  @include for-desktop-up {
+    &__title {
+      @include font($weight: 'bold', $size: 4.8rem);
+    }
   }
 }

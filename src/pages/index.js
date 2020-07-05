@@ -15,6 +15,7 @@ import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
 const Homepage = ({ data }) => {
   const homepageData = data.takeshape.getHomepage
+  const siteData = data.takeshape.getSiteSettings
 
   return (
     <Layout>
@@ -32,7 +33,7 @@ const Homepage = ({ data }) => {
                 <div className="belief__content">
                   <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
                   <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
-                  <a href="">
+                  <a href={siteData.donateUrl}>
                     <div className="belief__donate">
                       Donate
                     </div>
@@ -40,7 +41,9 @@ const Homepage = ({ data }) => {
                 </div>
                 <div className="belief__image__content">
                   <div className="belief__image__inner">
-                    <img className="belief__sticker" src={OrangeTab} />
+                    <div className="belief__sticker">
+                      <img src={OrangeTab} />
+                    </div>
                     <img className="belief__image" src={getImageUrl(homepageData.beliefSection.image.path)} />
                   </div>
                 </div> 
@@ -151,6 +154,9 @@ export const query = graphql`
             path
           }
         }
+      }
+      getSiteSettings {
+        donateUrl
       }
     }
   }

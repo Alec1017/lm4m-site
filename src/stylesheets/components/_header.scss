@@ -151,8 +151,6 @@
 
     &__text {
       @include font($size: 1.3rem);
-      color: -color(cream);
-      padding-top: 0.2rem;
     }
 
     &__hamburger {
@@ -216,6 +214,30 @@
     &__social {
       display: none;
       visibility: hidden;
+    }
+
+  }
+
+  @include for-desktop-up {
+    height: initial;
+
+    &__logo {
+      width: 60px;
+    }
+
+    &__text {
+      @include font($size: 1.5rem);
+      padding-top: 0.4rem;
+    }
+
+    &__link {
+      @include font($font: fira-sans, $size: 1.1rem);
+      padding-left: 2.4rem;
+    }
+
+    &__donate {
+      @include font($font: fira-sans, $size: 1.1rem, $weight: 'bold');
+      padding: 0.5rem 1rem;
     }
 
   }
