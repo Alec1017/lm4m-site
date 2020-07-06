@@ -8,8 +8,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const ContactPage = ({ data }) => (
-  <Layout>
+const ContactPage = ({ data, path }) => (
+  <Layout path={path}>
     <SEO title="Contact" />
     <h1>Ways to Get in Touch</h1>
     <h2>Other questions?</h2>

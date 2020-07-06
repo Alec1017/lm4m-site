@@ -13,12 +13,12 @@ import Footer from "../components/footer"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
-const Homepage = ({ data }) => {
+const Homepage = ({ data, path }) => {
   const homepageData = data.takeshape.getHomepage
   const siteData = data.takeshape.getSiteSettings
 
   return (
-    <Layout>
+    <Layout path={path}>
       <SEO title={homepageData.title} />
       <Hero
         tagline={homepageData.hero.heroText.blocks[0].text}

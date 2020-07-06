@@ -36,12 +36,27 @@
   &__logo {
     padding-right: 0.5rem;
     width: 38px;
+
+    display: none;
+    visibility: hidden;
+  }
+
+  &__logo--visible {
+    display: block;
+    visibility: visible;
   }
 
   &__text {
     @include font($size: 0.85rem);
-    color: -color(cream);
     padding-top:0.2rem;
+  }
+
+  &__text--light {
+    color: -color(cream);
+  }
+
+  &__text--dark {
+    color: -color(blue);
   }
   
   &__hamburger {
@@ -179,10 +194,6 @@
       @include font($font: fira-sans, $size: 0.8rem);
       padding-bottom: 0;
       padding-left: 1.4rem;
-  
-      a {
-        color: -color(cream);
-      }
     }
 
     &__donate {
@@ -249,10 +260,76 @@
     background: -color(blue);
     box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.4);
 
+    .header__text--light, 
+    .header__text--dark {
+      color: -color(cream) !important;
+    }
+
+    .header__link {
+      a {
+        color: -color(cream) !important;
+      }
+    }
+
+    .active-link {
+      &::before {
+        background: -color(cream) !important;
+      }
+    }
+
     .header__donate:hover {
       border: -color(cream);
       border-width: 1px;
       border-style: solid;
+    }
+  }
+}
+
+.active-link {
+  @include for-tablet-up {
+    position: relative;
+
+    &::before {
+      content:'';
+      display: block;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.3rem;
+    }
+  }
+}
+
+.light-routes {
+  @include for-tablet-up {
+    .header__link {
+      a {
+        color: -color(cream);
+      }
+    }
+
+    .active-link {
+      &::before {
+        background: -color(cream);
+      }
+    }
+
+  }
+}
+
+.dark-routes {
+  @include for-tablet-up {
+    .header__link {
+      a {
+        color: -color(blue);
+      }
+    }
+
+    .active-link {
+      &::before {
+        background: -color(blue);
+      }
     }
   }
 }

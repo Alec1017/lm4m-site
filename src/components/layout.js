@@ -5,7 +5,7 @@ import Header from "./header"
 
 import "../stylesheets/main.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, path }) => {
   const data = useStaticQuery(graphql`
     query {
       takeshape {
@@ -24,6 +24,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header 
+        path={path}
         siteTitle={siteData.siteTitle} 
         donateURL={siteData.donateUrl} 
         facebookURL={siteData.facebookUrl} 
