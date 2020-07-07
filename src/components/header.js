@@ -57,9 +57,9 @@ const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donat
             </div>
           </Link>
           <div className={`header__hamburger ${toggled ? 'toggled-hamburger' : ''}`} onClick={() => setToggled(!toggled)}>
-            <span className="header__hamburger__line"></span>
-            <span className="header__hamburger__line"></span>
-            <span className="header__hamburger__line"></span>
+            <span className={`header__hamburger__line${toggleLight ? ' header__hamburger__line--light' : ' header__hamburger__line--dark'}`}></span>
+            <span className={`header__hamburger__line${toggleLight ? ' header__hamburger__line--light' : ' header__hamburger__line--dark'}`}></span>
+            <span className={`header__hamburger__line${toggleLight ? ' header__hamburger__line--light' : ' header__hamburger__line--dark'}`}></span>
           </div>
           <ul className={`header__list ${toggled ? 'toggled-list' : ''}`}>
             <li>
