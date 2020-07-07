@@ -1,0 +1,52 @@
+.get-in-touch {
+  background: -color(cream);
+
+  &__wrapper:before {
+    content:"";
+    background-color: -color(cream);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+}
+
+  &__content {
+    padding-top: 3rem;
+  }
+
+  &__title {
+    @include font($weight: 'bold', $size: 2rem);
+    color: -color(green);
+  }
+
+  &__text {
+    @include font($font: fira-sans, $size: 1rem);
+    color: -color(blue);
+    padding-top: 1rem;
+  }
+
+  &__button {
+    @include font($font: fira-sans, $size: 1.2rem, $weight: 'bold');
+    display: inline-block;
+
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+
+    background: -color(green);
+    border-radius: 10px;
+    color: -color(cream);
+
+    border: 1px -color(green) solid;
+
+    transition: background-color 0.15s ease-in-out,
+                color 0.15s ease-in-out;
+
+    &:hover {
+      background: -color(cream);
+      color: -color(green)
+    }
+
+  }
+
+}

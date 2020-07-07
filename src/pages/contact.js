@@ -1,58 +1,31 @@
-// contact form
-// social media
-// get involved (partners, donors, volunteers)
-// FAQ
-
 import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Inner from "../components/inner"
 
 const ContactPage = ({ data, path }) => (
   <Layout path={path}>
     <SEO title="Contact" />
-    <h1>Ways to Get in Touch</h1>
-    <h2>Other questions?</h2>
-    <p>Send us a quick message!</p>
-    {/* contact form */}
-    <form>
-      <div className="container">
-        <div className="row">
-          <div className="col-sm">
-            <div className="row">
-              <div className="form-group">
-                <label for="name">Name</label>
-                <input type="text" />
+    <div className="contact">
+      <div className="contact__inner">
+
+        <div className="get-in-touch">
+          <div className="get-in-touch__wrapper">
+            <Inner>
+              <div className="get-in-touch__content">
+                <div className="get-in-touch__title">Get In Touch.</div>
+                <div className="get-in-touch__text">Check out our FAQs to see if your question is already answered</div>
+                <div className="get-in-touch__button">Contact</div>
               </div>
-            </div>
-            <div className="row">
-              <div className="form-group">
-                <label for="email">Email</label>
-                <input type="email" />
-              </div>
-            </div>
-          </div>
-          <div className="col-sm">
-            <div className="form-group">
-              <label for="name">Subject</label>
-              <textarea className="form-control" />
-            </div>
+            </Inner>
           </div>
         </div>
-        <div className="row">
-          <div className="form-group">
-            <label for="name">Message</label>
-            <textarea className="form-control" />
-          </div>
-        </div>
-        <div className="row">
-          <button type="button" className="btn btn-primary">
-            Submit
-          </button>
-        </div>
+
       </div>
-    </form>
-    <section>
+    </div>
+    
+    {/* <section>
       {data.takeshape.contact.relationship.map(qna => {
         return (
           <div>
@@ -61,7 +34,7 @@ const ContactPage = ({ data, path }) => (
           </div>
         )
       })}
-    </section>
+    </section> */}
   </Layout>
 )
 
