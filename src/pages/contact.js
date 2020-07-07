@@ -22,6 +22,22 @@ const ContactPage = ({ data, path }) => (
           </div>
         </div>
 
+        <div className="work-together">
+          <div className="work-together__wrapper">
+            <Inner>
+              <div className="work-together__content">
+                <div className="work-together__title">Let's work together!</div>
+                <div className="work-together__text">To partner with up, please go ahead and use the contact form above or send us an email directly at literacymovement4more@gmail.com</div>
+                <div className="work-together__subtitle">Who we partner with:</div>
+                <div className="work-together__text">LM4M establishes partnerships with organizations that specialize in education, children’s care, and library or community development. Examples of organizations we’ve worked with in the past have been public primary and secondary schools, international NGO’s and non-profit organizations, private orphanages, and government- funded children’s homes. You can see a list of our partners HERE.</div>
+                <div className="work-together__subtitle">Reaching out:</div>
+                <div className="work-together__text">If your organization or institution has the existing infrastructure to host a library of 500+ books and/or 5-10+ laptops, then we’ll start an inquiry on your call to action. Examples of necessary infrastructure for a library space would be: shelves, bins, reading tables, chairs or sitting equipment, and electricity outlets.</div>
+                <div className="work-together__text">Please be sure to include a point of contact in your email and to loop in all key stakeholders who you believe will be important in beginning a sustainable partnership. For example, organization leaders, educators, and key potential end-users of the library such as students or community members may be people who you may want to include on your email.</div>
+              </div>
+            </Inner>
+          </div>
+        </div>
+
       </div>
     </div>
     
