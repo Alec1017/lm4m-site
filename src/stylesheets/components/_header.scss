@@ -199,27 +199,35 @@
     &__donate {
       @include font($font: fira-sans, $size: 0.8rem, $weight: 'bold');
       padding: 0.5rem 1rem;
-      color: -color(blue);
-      background: -color(cream);
       border-radius: 30px;
-
-      border: -color(cream);
-      border-width: 1px;
-      border-style: solid;
 
       transition: color 0.15s ease-in-out,
                   border 0.15s ease-in-out,
                   background-color 0.15s ease-in-out;
+    }
 
-      &:hover {
-        color: -color(cream);
-        background: -color(blue);
+    &__donate--light {
+      border: 1px -color(cream) solid;
+      color: -color(blue);
+      background: -color(cream);
+    }
 
-        border: -color(blue);
-        border-width: 1px;
-        border-style: solid;
-      }
+    &__donate--light:hover {
+      color: -color(cream);
+      background: -color(blue);
+      border: 1px -color(blue) solid;
+    }
 
+    &__donate--dark {
+      border: 1px -color(blue) solid;
+      color: -color(cream);
+      background: -color(blue);
+    }
+
+    &__donate--dark:hover {
+      color: -color(blue);
+      background: -color(cream);
+      border: 1px -color(cream) solid;
     }
 
     &__social {

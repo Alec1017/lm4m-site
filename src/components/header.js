@@ -80,7 +80,7 @@ const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donat
             <li>
               <div className="header__link">
                 <a href={donateURL}>
-                  <div className="header__donate">Donate</div>
+                  <div className={`header__donate${toggleLight || isScrolling ? ' header__donate--light' : ' header__donate--dark'}`}>Donate</div>
                 </a>
               </div>
             </li>
