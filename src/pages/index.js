@@ -53,7 +53,7 @@ const Homepage = ({ data, path }) => {
 
           <div className="map">
             <div className="map__wrapper">
-            <Divider color="green" type="bottom" />
+              <Divider color="green" type="bottom" />
               <Inner>
                 <div className="map__content">
                   <div className="map__title" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.title.blocks[0].text }} />

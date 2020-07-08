@@ -76,4 +76,38 @@
     line-height: 1.3rem;
     padding-top: 1rem;
   }
+
+  &__icon__content {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.headshots {
+  background: -color(green);
+
+  &__image {
+    width: 20rem;
+    height: 20rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
 }
