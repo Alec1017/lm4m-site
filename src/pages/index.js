@@ -1,14 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { getImageUrl } from "takeshape-routing"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Hero from "../components/Hero"
 import SEO from "../components/seo"
 import Divider from "../components/divider"
 import Inner from "../components/inner"
-import Highlight from "../components/highlight"
 import Footer from "../components/footer"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
@@ -31,8 +29,10 @@ const Homepage = ({ data, path }) => {
             <div className="belief__wrapper">
               <Inner className="belief__inner">
                 <div className="belief__content">
-                  <div className="belief__title">{homepageData.beliefSection.beliefTitle.blocks[0].text}</div>
-                  <div className="belief__text">{homepageData.beliefSection.beliefText.blocks[0].text}</div>
+                  <div className="belief__title" dangerouslySetInnerHTML={{ __html: homepageData.beliefSection.title.blocks[0].text }} />
+                  {homepageData.beliefSection.text.blocks.map((value, index) => {
+                      return <div className="belief__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
+                    })}
                   <a href={siteData.donateUrl}>
                     <div className="belief__donate">
                       Donate
@@ -56,14 +56,8 @@ const Homepage = ({ data, path }) => {
             <Divider color="green" type="bottom" />
               <Inner>
                 <div className="map__content">
-                  <div className="map__title">
-                    {homepageData.mapSection.title.blocks[0].text.split(' ').slice(0, -1).join(' ')}
-                    &nbsp;
-                    <Highlight type="yellow">
-                      {homepageData.mapSection.title.blocks[0].text.split(' ').slice(-1)[0]}
-                    </Highlight>
-                  </div>
-                  <div className="map__subtitle">See the rest of <Link to="/work">Our Work</Link></div>
+                  <div className="map__title" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.title.blocks[0].text }} />
+                  <div className="map__subtitle" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.subtitle.blocks[0].text }} />
                   <div className="map__image">
                     <img src={getImageUrl(homepageData.mapSection.image.path)} />
                   </div>
@@ -77,8 +71,10 @@ const Homepage = ({ data, path }) => {
             <div className="quote__wrapper">
               <Inner>
                 <div className="quote__content">
-                  <div className="quote__text">{homepageData.quoteSection.quote.blocks[0].text}</div>
-                  <div className="quote__source">{homepageData.quoteSection.source}</div>
+                  {homepageData.quoteSection.quote.blocks.map((value, index) => {
+                    return <div className="quote__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
+                  })}
+                  <div className="quote__source" dangerouslySetInnerHTML={{ __html: homepageData.quoteSection.source.blocks[0].text }} />
                 </div>
               </Inner>
             </div>
@@ -90,15 +86,9 @@ const Homepage = ({ data, path }) => {
               <Inner>
                 <div className="stories__content">
                   <div className="stories__text__wrapper">
-                    <div className="stories__title">
-                      {homepageData.storiesSection.title.split(' ').slice(0, -1).join(' ')}
-                      &nbsp;
-                      <Highlight type="yellow">
-                        {homepageData.storiesSection.title.split(' ').slice(-1)[0]}
-                      </Highlight>
-                    </div>
+                    <div className="stories__title" dangerouslySetInnerHTML={{ __html: homepageData.storiesSection.title.blocks[0].text }} />
                     {homepageData.storiesSection.text.blocks.map((value, index) => {
-                      return <div className="stories__text" key={index}>{value.text}</div>
+                      return <div className="stories__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
                     })}
                   </div>
                   <div className="stories__image">
@@ -134,11 +124,12 @@ export const query = graphql`
           image {
             path
           }
-          beliefText
-          beliefTitle
+          text
+          title
         }
         mapSection {
           title
+          subtitle
           image {
             path
           }
