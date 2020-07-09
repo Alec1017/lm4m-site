@@ -25,8 +25,9 @@
   }
 
   &__answer {
-    display: none;
     visibility: hidden;
+    opacity: 0;
+    max-height: 0;
   }
 
   &__text {
@@ -38,8 +39,12 @@
 }
 
 .is-open {
-  &__answer {
-    display: block;
     visibility: visible;
-  }
+    overflow: hidden;
+    opacity: 1;
+    max-height: 500rem; // setting max height bigger than div will ever get, enables the transition
+    will-change: max-height, opacity;
+    transition: max-height .3s cubic-bezier(.86,0,.07,1),
+                opacity 0.4s ease-in-out;
+  
 }

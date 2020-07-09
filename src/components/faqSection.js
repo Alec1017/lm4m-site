@@ -15,7 +15,7 @@ const FAQSection = ({question, answer}) => {
           </div>
 
         </div>
-        <div className={`faq-section__answer${isOpen ? 'is-open' : ''}`}>
+        <div className={`faq-section__answer${isOpen ? ' is-open' : ''}`}>
           {answer.blocks.map((value, index) => {
             return <div className="faq-section__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
           })}
