@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Inner from "../components/inner"
 import Footer from "../components/footer"
+import FAQSection from "../components/faqSection"
 import Divider from "../components/divider"
 import YellowLabel from "../images/labels/yellow_label.png"
 import RedLabel from "../images/labels/red_label_2.png"
@@ -55,7 +56,7 @@ const ContactPage = ({ data, path }) => {
                   <div className="work-together__icon__content">
                     {contactData.workTogetherSection.icons.map((value, index) => {
                       return (
-                        <div className="work-together__icon">
+                        <div className="work-together__icon" key={index}>
                           <img src={getImageUrl(value.image.path)} />
                         </div>
                       ) 
@@ -84,8 +85,8 @@ const ContactPage = ({ data, path }) => {
                       </div>
                     </div>
                     <div className="headshots__text">
-                      <div className="headshots__name">Seema Korumilli</div>
-                      <div className="headshots__email">seemakorumilli@gmail.com</div>
+                      <div className="headshots__name">{contactData.headshotsSection.first.name}</div>
+                      <div className="headshots__email">{contactData.headshotsSection.first.email}</div>
                     </div>
                   </div>
 
@@ -101,20 +102,30 @@ const ContactPage = ({ data, path }) => {
                       </div>
                     </div>
                     <div className="headshots__text">
-                      <div className="headshots__name">Suraj Korumilli</div>
-                      <div className="headshots__email">surajkorumilli@gmail.com</div>
+                      <div className="headshots__name">{contactData.headshotsSection.second.name}</div>
+                      <div className="headshots__email">{contactData.headshotsSection.second.email}</div>
                     </div>
                   </div>
-
-                  {/* <div className="headshots__headshot">
-                    <div className="headshots__image headshots__second__image">
-                      <img src={getImageUrl(contactData.headshotsSection.second.image.path)} />
-                    </div>
-                    <div className="headshots__name">Suraj Korumilli</div>
-                    <div className="headshots__email">surajkorumilli@gmail.com</div>
-                  </div> */}
                 </div>
               </Inner>
+            </div>
+          </div>
+
+          <div className="faq">
+            <div className="faq__wrapper">
+              <Divider color="green" type="bottom" />
+              <Inner>
+                <div className="faq__content">
+                  <div className="faq__title">Got a question? We have answers!</div>
+
+                  <div className="faq__qna">
+                    {contactData.faqSection.qnA.map((qna, index) => {
+                      return <FAQSection question={qna.question} answer={qna.answer} key={index} />
+                    })}
+                  </div>
+                </div>
+              </Inner>
+              <Divider color="blue" type="top" />
             </div>
           </div>
 
@@ -174,14 +185,17 @@ export const query = graphql`
             }
           }
         }
+        faqSection {
+          qnA {
+            _id
+            answer
+            question
+          }
+          title
+        }
       }
     }
   }
 `
-
-// relationship {
-//   question
-//   answer
-// }
 
 export default ContactPage

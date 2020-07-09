@@ -1,0 +1,45 @@
+.faq-section {
+
+  &__inner {
+    padding-bottom: 2rem;
+    border-bottom: 1px -color(blue) solid;
+  }
+
+  &__question {
+    display: flex;
+  }
+
+  &__title {
+    @include font($weight: 'bold', $size: 1.2rem);
+    color: -color(green);
+    line-height: 1.5rem;
+  }
+
+  &__button__content {
+    padding-left: 3rem;
+  }
+
+  &__button {
+    @include font($font: fira-sans, $weight: 'bold', $size: 2.7rem);
+    color: -color(yellow);
+  }
+
+  &__answer {
+    display: none;
+    visibility: hidden;
+  }
+
+  &__text {
+    @include font($font: fira-sans, $size: 1rem);
+    color: -color(blue);
+    line-height: 1.3rem;
+    padding-top: 1rem;
+  }
+}
+
+.is-open {
+  &__answer {
+    display: block;
+    visibility: visible;
+  }
+}
