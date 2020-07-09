@@ -116,8 +116,7 @@ const ContactPage = ({ data, path }) => {
               <Divider color="green" type="bottom" />
               <Inner>
                 <div className="faq__content">
-                  <div className="faq__title">Got a question? We have answers!</div>
-
+                  <div className="faq__title" dangerouslySetInnerHTML={{ __html: contactData.faqSection.title.blocks[0].text }} />
                   <div className="faq__qna">
                     {contactData.faqSection.qnA.map((qna, index) => {
                       return <FAQSection question={qna.question} answer={qna.answer} key={index} />

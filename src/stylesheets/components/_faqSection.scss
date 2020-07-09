@@ -2,11 +2,13 @@
 
   &__inner {
     padding-bottom: 2rem;
+    margin-bottom: 2rem;
     border-bottom: 1px -color(blue) solid;
   }
 
   &__question {
     display: flex;
+    justify-content: space-between;
   }
 
   &__title {
@@ -22,6 +24,7 @@
   &__button {
     @include font($font: fira-sans, $weight: 'bold', $size: 2.7rem);
     color: -color(yellow);
+    width: 1.3rem;
   }
 
   &__answer {
@@ -35,6 +38,13 @@
     color: -color(blue);
     line-height: 1.3rem;
     padding-top: 1rem;
+    padding-right: 1.3rem;
+  }
+
+  @include for-tablet-up {
+    &__question {
+      cursor: pointer;
+    }
   }
 }
 
@@ -46,5 +56,4 @@
     will-change: max-height, opacity;
     transition: max-height .3s cubic-bezier(.86,0,.07,1),
                 opacity 0.4s ease-in-out;
-  
 }

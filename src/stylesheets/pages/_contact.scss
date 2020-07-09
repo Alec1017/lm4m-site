@@ -99,6 +99,8 @@
 
 .headshots {
   background: -color(green);
+  z-index: 1;
+  position: relative;
 
   &__content {
     padding: 5rem 0;
@@ -181,7 +183,7 @@
   background: -color(cream);
 
   &__content {
-    padding: 4rem 0;
+    padding: 8rem 0;
   }
 
   &__title {
