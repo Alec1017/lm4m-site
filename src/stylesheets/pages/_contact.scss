@@ -99,15 +99,80 @@
 .headshots {
   background: -color(green);
 
+  &__content {
+    padding: 5rem 0;
+  }
+
+  &__wrapper--second {
+    padding-top: 4rem;
+  }
+
+  &__headshot {
+    position: relative;
+
+    width: 16.5rem;
+    height: 16.5rem;
+    margin: auto;
+  }
+
+  &__headshot--first {
+    transform: rotate(-6deg);
+  }
+
+  &__headshot--second {
+    transform: rotate(6deg);
+  }
+
+  &__headshot__inner {
+      position: relative;
+  }
+
   &__image {
-    width: 20rem;
-    height: 20rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__sticker {
+    position: absolute;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__sticker--yellow {
+    width: 8rem;
+    top: 0;
+    left: -2.5rem;
+    transform: rotate(-45deg);
+  }
+
+  &__sticker--red {
+    width: 8rem;
+    bottom: -0.5rem;
+    right: -2rem;
+    transform: rotate(152deg);
+  }
+
+  &__text {
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  &__name {
+    @include font($weight: 'bold', $size: 1.2rem);
+    color: -color(yellow);
+  }
+
+  &__email {
+    @include font($font: fira-sans, $weight: 'light', $size: 0.9rem);
+    color: -color(cream);
+    padding-top: 0.5rem;
   }
 
 }

@@ -47,10 +47,10 @@ const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donat
         <Inner className="header__inner">
           <Link to="/">
             <div className="header__title">
-              <div className={`header__logo${toggleLight || isScrolling ? ' header__logo--visible' : ''}`}>
+              <div className={`header__logo header__logo--light${toggleLight ? ' header__logo--visible' : ''}`}>
                 <img src={logoLight} />
               </div>
-              <div className={`header__logo${!toggleLight && !isScrolling ? ' header__logo--visible' : ''}`}>
+              <div className={`header__logo header__logo--dark${!toggleLight ? ' header__logo--visible' : ''}`}>
                 <img src={logoDark} />
               </div>
               <div className={`header__text${toggleLight ? ' header__text--light' : ' header__text--dark'}`}>{siteTitle}</div>

@@ -275,6 +275,16 @@
     background: -color(blue);
     box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.4);
 
+    .header__logo--light {
+      display: block !important;
+      visibility: visible !important;
+    }
+
+    .header__logo--dark {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
     .header__text--light, 
     .header__text--dark {
       color: -color(cream) !important;

@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import Inner from "../components/inner"
 import Footer from "../components/footer"
 import Divider from "../components/divider"
+import YellowLabel from "../images/labels/yellow_label.png"
+import RedLabel from "../images/labels/red_label_2.png"
 
 const ContactPage = ({ data, path }) => {
   const contactData = data.takeshape.getContact
@@ -69,21 +71,48 @@ const ContactPage = ({ data, path }) => {
             <div className="headshots__wrapper">
               <Inner>
                 <div className="headshots__content">
-                  <div className="headshots__headshot">
-                    <div className="headshots__image headshots__first__image">
-                      <img src={getImageUrl(contactData.headshotsSection.first.image.path)} />
+
+                  <div className="headshots__wrapper headshots__wrapper--first">
+                    <div className="headshots__headshot headshots__headshot--first">
+                      <div className="headshots__headshot__inner">
+                        <div className="headshots__sticker headshots__sticker--yellow">
+                          <img src={YellowLabel} />
+                        </div>
+                        <div className="headshots__image">
+                          <img src={getImageUrl(contactData.headshotsSection.first.image.path)} />
+                        </div>
+                      </div>
                     </div>
-                    <div className="headshots__name">Seema Korumilli</div>
-                    <div className="headshots__email">seemakorumilli@gmail.com</div>
+                    <div className="headshots__text">
+                      <div className="headshots__name">Seema Korumilli</div>
+                      <div className="headshots__email">seemakorumilli@gmail.com</div>
+                    </div>
                   </div>
 
-                  <div className="headshots__headshot">
+                  <div className="headshots__wrapper headshots__wrapper--second">
+                    <div className="headshots__headshot headshots__headshot--second">
+                      <div className="headshots__headshot__inner">
+                        <div className="headshots__sticker headshots__sticker--red">
+                          <img src={RedLabel} />
+                        </div>
+                        <div className="headshots__image">
+                          <img src={getImageUrl(contactData.headshotsSection.second.image.path)} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="headshots__text">
+                      <div className="headshots__name">Suraj Korumilli</div>
+                      <div className="headshots__email">surajkorumilli@gmail.com</div>
+                    </div>
+                  </div>
+
+                  {/* <div className="headshots__headshot">
                     <div className="headshots__image headshots__second__image">
                       <img src={getImageUrl(contactData.headshotsSection.second.image.path)} />
                     </div>
                     <div className="headshots__name">Suraj Korumilli</div>
                     <div className="headshots__email">surajkorumilli@gmail.com</div>
-                  </div>
+                  </div> */}
                 </div>
               </Inner>
             </div>
