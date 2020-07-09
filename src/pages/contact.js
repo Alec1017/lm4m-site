@@ -128,21 +128,23 @@ const ContactPage = ({ data, path }) => {
             </div>
           </div>
 
-          <Footer light backgroundColor="blue" />
+          <Footer light backgroundColor="blue">
+            <div className="partners">
+              <div className="partners__content">
+                <div className="partners__title" dangerouslySetInnerHTML={{ __html: contactData.partnersSection.title.blocks[0].text }} />
+                <div className="partners__partners">
+                  {contactData.partnersSection.partners.map((value, index) => {
+                    return <div className="partners__text" key={index}>{value.partner}</div>
+                  })}
+                </div>
+              </div>
+
+            </div>
+          </Footer>
 
         </div>
       </div>
       
-      {/* <section>
-        {data.takeshape.contact.relationship.map(qna => {
-          return (
-            <div>
-              <p>{qna.question}</p>
-              <p>{qna.answer.blocks[0].text}</p>
-            </div>
-          )
-        })}
-      </section> */}
     </Layout>
   )
 }
@@ -191,6 +193,12 @@ export const query = graphql`
             question
           }
           title
+        }
+        partnersSection {
+          title
+          partners {
+            partner
+          }
         }
       }
     }
