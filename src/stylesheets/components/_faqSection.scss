@@ -54,6 +54,33 @@
     &__title {
       @include font($weight: 'bold', $size: 1.5rem);
     }
+  }
+
+  @include for-desktop-up {
+    &__inner {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__question {
+      display: flex;
+      justify-content: initial;
+      width: 80%;
+    }
+
+    &__answer {
+      width: 80%;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 2.1rem);
+      line-height: 2.1rem;
+    }
+
+    &__text {
+      @include font($font: fira-sans, $size: 1.1rem);
+      line-height: 1.3rem;
+    }
 
   }
 }
