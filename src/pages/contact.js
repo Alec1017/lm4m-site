@@ -27,7 +27,11 @@ const ContactPage = ({ data, path }) => {
                   {contactData.getInTouchSection.text.blocks.map((value, index) => {
                     return <div className="get-in-touch__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
                   })}
-                  <div className="get-in-touch__button">Contact</div>
+                  <a href={`mailto:${contactData.getInTouchSection.email}`}>
+                    <div className="get-in-touch__button">
+                      Contact
+                    </div>
+                  </a>
                 </div>
               </Inner>
             </div>
@@ -111,7 +115,7 @@ const ContactPage = ({ data, path }) => {
             </div>
           </div>
 
-          <div className="faq">
+          <div className="faq" id="faq">
             <div className="faq__wrapper">
               <Divider color="green" type="bottom" />
               <Inner>
@@ -129,7 +133,7 @@ const ContactPage = ({ data, path }) => {
           </div>
 
           <Footer light backgroundColor="blue">
-            <div className="partners">
+            <div className="partners" id="partners">
               <div className="partners__content">
                 <div className="partners__title" dangerouslySetInnerHTML={{ __html: contactData.partnersSection.title.blocks[0].text }} />
                 <div className="partners__partners">
@@ -156,6 +160,7 @@ export const query = graphql`
         getInTouchSection {
           title
           text
+          email
         }
         workTogetherSection {
           title

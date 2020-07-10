@@ -1,5 +1,9 @@
 .faq-section {
 
+  a {
+    color: -color(green);
+  }
+
   &__inner {
     padding-bottom: 2rem;
     margin-bottom: 2rem;

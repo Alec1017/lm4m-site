@@ -1,6 +1,10 @@
 .get-in-touch {
   background: -color(cream);
 
+  a {
+    color: -color(green);
+  }
+
   &__wrapper:before {
     content:"";
     background-color: -color(cream);
@@ -82,6 +86,11 @@
 
 .work-together {
   background: -color(cream);
+
+  a {
+    color: -color(blue);
+    text-decoration: none;
+  }
 
   &__content {
     padding-top: 4rem;
@@ -375,6 +384,11 @@
 }
 
 .partners {
+
+  a {
+    color: -color(cream);
+    text-decoration: none;
+  }
 
   &__content {
     padding: 4rem 0;

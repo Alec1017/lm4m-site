@@ -21,6 +21,10 @@
 
     padding-top: 1rem;
     line-height: 1.4rem;
+
+    a {
+      color: -color(cream);
+    }
   }
 
   &__image__inner {
@@ -75,18 +79,6 @@
       padding-top: 5rem;
       padding-bottom: 4rem;
       width: 50%;
-
-      a {
-        text-decoration: none;
-        color: -color(blue);
-
-        transition: color 0.15s ease-in-out;
-      }
-
-      a:hover {
-          color: -color(yellow);
-      }
-      
     }
 
     &__image__content {
@@ -110,16 +102,19 @@
       padding: 0.5rem 1rem;
   
       background: -color(yellow);
+      color: -color(blue);
       border-radius: 10px;
 
       border: -color(yellow);
       border-width: 1px;
       border-style: solid;
 
-      transition: background-color 0.15s ease-in-out;
+      transition: color 0.15s ease-in-out,
+                  background-color 0.15s ease-in-out;
 
       &:hover {
-        background: -color(blue);
+        color: -color(yellow);
+        background: -color(green);
       }
 
     }
@@ -303,6 +298,10 @@
 
     padding-top: 2rem;
     line-height: 1.4rem;
+
+    a {
+      color: -color(blue);
+    }
   }
 
   &__text:nth-child(n+3) {
