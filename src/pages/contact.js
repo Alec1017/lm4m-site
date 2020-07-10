@@ -84,7 +84,7 @@ const ContactPage = ({ data, path }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="headshots__text">
+                    <div className="headshots__text headshots__text--first">
                       <div className="headshots__name">{contactData.headshotsSection.first.name}</div>
                       <div className="headshots__email">{contactData.headshotsSection.first.email}</div>
                     </div>
@@ -101,7 +101,7 @@ const ContactPage = ({ data, path }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="headshots__text">
+                    <div className="headshots__text headshots__text--second">
                       <div className="headshots__name">{contactData.headshotsSection.second.name}</div>
                       <div className="headshots__email">{contactData.headshotsSection.second.email}</div>
                     </div>
