@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import Divider from "../components/divider"
 import Inner from "../components/inner"
 import Footer from "../components/footer"
+import Tooltip from "../components/tooltip"
 
 import OrangeTab from "../images/labels/orange_sticky_tab.png"
 
@@ -59,6 +60,7 @@ const Homepage = ({ data, path }) => {
                   <div className="map__title" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.title.blocks[0].text }} />
                   <div className="map__subtitle" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.subtitle.blocks[0].text }} />
                   <div className="map__image">
+                    <Tooltip data="Nassau, Bahamas" top={42} left={18} />
                     <img src={getImageUrl(homepageData.mapSection.image.path)} />
                   </div>
                 </div>
