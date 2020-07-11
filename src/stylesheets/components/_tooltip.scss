@@ -1,42 +1,52 @@
 .tooltip {
-  position: absolute;
-  // top and left are handled by inline styles
-  background: -color(blue);
-  border-radius: 10px;
 
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  display: none;
+  visibility: hidden;
 
-  &::after {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px -color(blue) solid;
-    content: "";
-    font-size: 0;
-    left: 50%; //This centers the arrow
-    line-height: 0;
-    margin-left: -5px;
+  @include for-tablet-up {
+    display: block;
+    visibility: visible;
     position: absolute;
-    top: 100%; //This positions the arrow at the bottom of the container
-    width: 0;
+    // top and left are handled by inline styles
+    background: -color(blue);
+    border-radius: 10px;
+    transform: translate(-50%, -150%);
+  
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+  
+    &::after {
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px -color(blue) solid;
+      content: "";
+      font-size: 0;
+      left: 50%; //This centers the arrow
+      line-height: 0;
+      margin-left: -5px;
+      position: absolute;
+      top: 100%; //This positions the arrow at the bottom of the container
+      width: 0;
+    }
+  
+    &__text {
+      @include font($font: fira-sans, $size: 0.9rem);
+      color: -color(cream);
+      padding: 0.5rem 1rem;
+    }
+  
+    &__trigger {
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      margin-left: -0.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+  
+      background: -color(red);
+    }
   }
-
-  &__text {
-    @include font($font: fira-sans, $size: 0.9rem);
-    color: -color(cream);
-    padding: 0.5rem 1rem;
-  }
-
-  &__trigger {
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    margin-left: -0.75rem;
-    width: 1.5rem;
-    height: 1.5rem;
-
-    // background: -color(red);
-  }
+  
 }
 
 .tooltip--visible {

@@ -60,7 +60,9 @@ const Homepage = ({ data, path }) => {
                   <div className="map__title" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.title.blocks[0].text }} />
                   <div className="map__subtitle" dangerouslySetInnerHTML={{ __html: homepageData.mapSection.subtitle.blocks[0].text }} />
                   <div className="map__image">
-                    <Tooltip data="Nassau, Bahamas" top={42} left={18} />
+                    <div className="map__tooltips">
+                      <Tooltip data="Nassau, Bahamas" top={48} left={26.3} />
+                    </div>
                     <img src={getImageUrl(homepageData.mapSection.image.path)} />
                   </div>
                 </div>
