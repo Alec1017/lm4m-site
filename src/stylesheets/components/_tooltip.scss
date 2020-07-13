@@ -12,8 +12,8 @@
     border-radius: 10px;
     transform: translate(-50%, -150%);
   
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   
     &::after {
       border-left: 5px solid transparent;
@@ -42,8 +42,6 @@
       margin-left: -0.75rem;
       width: 1.5rem;
       height: 1.5rem;
-  
-      background: -color(red);
     }
   }
   
@@ -51,4 +49,5 @@
 
 .tooltip--visible {
   opacity: 1;
+  cursor: pointer;
 }
