@@ -63,8 +63,8 @@ const Homepage = ({ data, path }) => {
                     <div className="map__tooltips">
                       <Tooltip data="Nassau, Bahamas" top={48} left={26.3} />
                       <Tooltip data="Cape Town, South Africa" top={75} left={54.5} />
-                      <Tooltip data="Kent, UK" top={28} left={45.5} />
                       <Tooltip data="Thessaloniki, Greece" top={36} left={53.6} />
+                      <Tooltip data="Kent, UK" top={28} left={45.5} />
                       <Tooltip data="Andhra Pradesh, India" top={48} left={70.25} />
                     </div>
                     <img src={getImageUrl(homepageData.mapSection.image.path)} />
