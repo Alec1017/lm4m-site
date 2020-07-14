@@ -243,6 +243,23 @@
     background: -color(blue);
   }
 
+  // carousel styles
+  .slide {
+    background: -color(blue) !important;
+  }
+
+  .dot {
+    border: 1px -color(cream) solid !important;
+    background: none !important;
+    opacity: 1 !important;
+  }
+
+  .control-dots > .selected {
+    background: -color(cream) !important;
+  }
+
+  // end carousel styles
+
   &__content {
     padding: 4rem 0;
   }
@@ -251,6 +268,7 @@
     @include font($size: 1.2rem);
     color: -color(cream);
     line-height: 150%;
+    text-align: left;
   }
 
   &__source {
@@ -268,8 +286,12 @@
   }
 
   @include for-desktop-up {
+    &__wrapper {
+      padding-bottom: 3rem;
+    }
+
     &__content {
-      padding: 5rem 8rem;
+      padding: 5rem 8rem 2rem;
     }
 
     &__text {

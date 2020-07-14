@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { getImageUrl } from "takeshape-routing"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from 'react-responsive-carousel'
 
 import Layout from "../components/layout"
 import Hero from "../components/Hero"
@@ -15,6 +17,15 @@ import OrangeTab from "../images/labels/orange_sticky_tab.png"
 const Homepage = ({ data, path }) => {
   const homepageData = data.takeshape.getHomepage
   const siteData = data.takeshape.getSiteSettings
+
+  useEffect(() => {
+    // Remove the tabindex attribute from each of the dots in the carousel
+    const dots = document.getElementsByClassName("dot")
+    for (const dot of dots) {
+      dot.removeAttribute("tabindex")
+    }
+
+  }, [])
 
   return (
     <Layout path={path}>
@@ -78,12 +89,18 @@ const Homepage = ({ data, path }) => {
           <div className="quote">
             <div className="quote__wrapper">
               <Inner>
-                <div className="quote__content">
-                  {homepageData.quoteSection.quote.blocks.map((value, index) => {
-                    return <div className="quote__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
+                <Carousel autoPlay infiniteLoop={true} interval={8000} showArrows={false} showStatus={false} showThumbs={false} className="quote__carousel">
+                  {homepageData.quoteSection.quoteSlide.map((value, index) => {
+                    return (
+                      <div className="quote__content" key={index}>
+                        {value.quote.blocks.map((value, index) => {
+                          return <div className="quote__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
+                        })}
+                        <div className="quote__source" dangerouslySetInnerHTML={{ __html: value.source.blocks[0].text }} />
+                      </div>
+                    )
                   })}
-                  <div className="quote__source" dangerouslySetInnerHTML={{ __html: homepageData.quoteSection.source.blocks[0].text }} />
-                </div>
+                </Carousel>
               </Inner>
             </div>
           </div>
@@ -143,8 +160,10 @@ export const query = graphql`
           }
         }
         quoteSection {
-          quote
-          source
+          quoteSlide {
+            quote
+            source
+          }
         }
         storiesSection {
           title
