@@ -89,6 +89,12 @@ const Homepage = ({ data, path }) => {
           <div className="quote">
             <div className="quote__wrapper">
               <Inner>
+              <div className="quote__content quote__carousel--mobile">
+                {homepageData.quoteSection.quoteSlide[0].quote.blocks.map((value, index) => {
+                  return <div className="quote__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
+                })}
+                <div className="quote__source" dangerouslySetInnerHTML={{ __html: homepageData.quoteSection.quoteSlide[0].source.blocks[0].text }} />
+              </div>
                 <Carousel autoPlay infiniteLoop={true} interval={8000} showArrows={false} showStatus={false} showThumbs={false} className="quote__carousel">
                   {homepageData.quoteSection.quoteSlide.map((value, index) => {
                     return (

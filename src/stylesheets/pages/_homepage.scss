@@ -244,6 +244,12 @@
   }
 
   // carousel styles
+
+  &__carousel {
+    display: none;
+    visibility: hidden;
+  }
+
   .slide {
     background: -color(blue) !important;
   }
@@ -282,6 +288,16 @@
   @include for-tablet-up {
     &__content {
       padding: 3rem 8rem;
+    }
+    
+    &__carousel {
+      display: block;
+      visibility: visible;
+    }
+
+    &__carousel--mobile {
+      display: none;
+      visibility: hidden;
     }
   }
 
