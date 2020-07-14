@@ -17,11 +17,17 @@
 
   &__content {
     padding-top: 3rem;
+    padding-bottom: 4rem;
   }
 
   &__title {
     @include font($weight: 'bold', $size: 2rem);
     color: -color(cream);
+  }
+
+  &__title--full {
+    display: none;
+    visibility: hidden;
   }
 
   &__locations {
@@ -38,7 +44,6 @@
     @include font($font: fira-sans, $size: 1rem, $weight: 'light');
     color: -color(cream);
     padding-top: 0.4rem;
-
   }
 
   &__text {
@@ -59,4 +64,70 @@
       object-fit: contain;
     }
   }
+
+  @include for-tablet-up {
+    &__title--full {
+      display: block;
+      visibility: visible;
+    }
+
+    &__title--abbreviated {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+.stats {
+  background: -color(cream);
+  position: relative;
+  z-index: 1;
+  
+  &__content {
+    padding-bottom: 3rem;
+  }
+
+  &__stat {
+    padding-top: 6rem;
+  }
+
+  &__image {
+    width: 13rem;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__value {
+    @include font($weight: 'bold', $size: 2.5rem);
+    color: -color(green);
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  &__label {
+    @include font($font: fira-sans, $size: 1.2rem);
+    color: -color(blue);
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+
+}
+
+.projects {
+
+  &__content {
+    padding: 5rem 0;
+  }
+
+  &__title {
+    @include font($weight: 'bold', $size: 2.3rem);
+    color: -color(cream);
+  }
+
+
 }
