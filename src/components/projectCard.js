@@ -5,20 +5,16 @@ import { getImageUrl } from "takeshape-routing"
 const ProjectCard = ({ image, location, text }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  // const noScroll = () => {
-  //   window.scrollTo(0, 0);
-  // }
-
   const openModal = () => {
     setIsOpen(true)
-    document.body.style.overflowY = "hidden"
-    // window.addEventListener('scroll', noScroll)
+    const root = document.getElementsByTagName('html')[0];
+    root.setAttribute('class', 'stop-scroll')
   }
 
   const closeModal = () => {
     setIsOpen(false)
-    document.body.style.overflowY = "initial"
-    // window.removeEventListener('scroll', noScroll)
+    const root = document.getElementsByTagName('html')[0];
+    root.classList.remove('stop-scroll')
   }
 
   return (

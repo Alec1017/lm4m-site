@@ -9,12 +9,23 @@ import LinkedIn from "../images/vectors/linkedin.svg"
 import Inner from "./inner"
 
 const lightRoutes = ['/', '/work/']
+const root = document.getElementsByTagName('html')[0];
 
 const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donateURL }) => {
   const [toggled, setToggled] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const [prevScroll, setPrevScroll] = useState(0)
   const [toggleLight, setToggleLight] = useState(true)
+
+  const toggleHamburger = () => {
+    if (toggled) {
+      setToggled(false)
+      root.classList.remove('stop-scroll')
+    } else {
+      setToggled(true)
+      root.setAttribute('class', 'stop-scroll')
+    }
+  }
   
 
   const showHeader = () => {
@@ -38,6 +49,7 @@ const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donat
 
     return () => {
       window.removeEventListener('scroll', showHeader)
+      root.classList.remove('stop-scroll')
     }
   }, [])
 
@@ -56,7 +68,7 @@ const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donat
               <div className={`header__text${toggleLight ? ' header__text--light' : ' header__text--dark'}`}>{siteTitle}</div>
             </div>
           </Link>
-          <div className={`header__hamburger ${toggled ? 'toggled-hamburger' : ''}`} onClick={() => setToggled(!toggled)}>
+          <div className={`header__hamburger ${toggled ? 'toggled-hamburger' : ''}`} onClick={() => toggleHamburger()}>
             <span className={`header__hamburger__line${toggleLight ? ' header__hamburger__line--light' : ' header__hamburger__line--dark'}`}></span>
             <span className={`header__hamburger__line${toggleLight ? ' header__hamburger__line--light' : ' header__hamburger__line--dark'}`}></span>
             <span className={`header__hamburger__line${toggleLight ? ' header__hamburger__line--light' : ' header__hamburger__line--dark'}`}></span>
