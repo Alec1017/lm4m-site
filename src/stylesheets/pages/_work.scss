@@ -66,6 +66,15 @@
   }
 
   @include for-tablet-up {
+    &__content {
+      padding-top: 8rem;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 2.3rem);
+      width: 60%;
+    }
+
     &__title--full {
       display: block;
       visibility: visible;
@@ -74,6 +83,35 @@
     &__title--abbreviated {
       display: none;
       visibility: hidden;
+    }
+
+    &__locations {
+      padding-top: 4rem;
+    }
+
+    &__location {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 4rem;
+    }
+
+    &__location--reverse {
+      flex-direction: row-reverse;
+    }
+
+    &__location__title {
+      @include font($weight: 'bold', $size: 1.5rem);
+    }
+
+    &__image {
+      width: 20rem;
+      margin: 0;
+      padding-top: 0;
+    }
+
+    &__content__text {
+      width: 45%;
     }
   }
 }
@@ -92,7 +130,7 @@
   }
 
   &__image {
-    width: 13rem;
+    width: 12rem;
     margin: 0 auto;
 
     img {
@@ -116,6 +154,18 @@
     padding-top: 0.5rem;
   }
 
+  @include for-tablet-up {
+    &__stats {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    &__content {
+      padding-bottom: 6rem;
+    }
+  }
+
 }
 
 .projects {
@@ -127,6 +177,14 @@
   &__title {
     @include font($weight: 'bold', $size: 2.3rem);
     color: -color(cream);
+  }
+
+  @include for-tablet-up {
+    &__projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
 

@@ -26,14 +26,16 @@ const WorkPage = ({ data, path }) => {
               <div className="our-work__locations">
                 {workData.ourWorkSection.location.map((value, index) => {
                   return (
-                    <div className="our-work__location" key={index}>
+                    <div className={`our-work__location${index % 2 === 0 ? ' our-work__location--reverse' : ''}`} key={index}>
                       <div className="our-work__image">
                         <img src={getImageUrl(value.image.path)} />
                       </div>
-                      <div className="our-work__location__title" dangerouslySetInnerHTML={{ __html: value.title.blocks[0].text }} />
-                      {value.text.blocks.map((value, index) => {
-                        return <div className="our-work__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
-                      })}
+                      <div className="our-work__content__text">
+                        <div className="our-work__location__title" dangerouslySetInnerHTML={{ __html: value.title.blocks[0].text }} />
+                        {value.text.blocks.map((value, index) => {
+                          return <div className="our-work__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
+                        })}
+                      </div>
                     </div>
                   )
                 })}
@@ -48,17 +50,19 @@ const WorkPage = ({ data, path }) => {
           <Divider color="green" type="bottom" />
           <Inner>
             <div className="stats__content">
-              {workData.statsSection.stat.map((value, index) => {
-                return (
-                  <div className="stats__stat" key={index}>
-                    <div className="stats__image">
-                      <img src={getImageUrl(value.image.path)} />
+              <div className="stats__stats">
+                {workData.statsSection.stat.map((value, index) => {
+                  return (
+                    <div className="stats__stat" key={index}>
+                      <div className="stats__image">
+                        <img src={getImageUrl(value.image.path)} />
+                      </div>
+                      <div className="stats__value">{value.value}</div>
+                      <div className="stats__label">{value.label}</div>
                     </div>
-                    <div className="stats__value">{value.value}</div>
-                    <div className="stats__label">{value.label}</div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </Inner>
           <Divider color="blue" type="top" />
@@ -69,9 +73,11 @@ const WorkPage = ({ data, path }) => {
         <div className="projects">
           <div className="projects__content">
             <div className="projects__title" dangerouslySetInnerHTML={{ __html: workData.moreProjectsSection.title.blocks[0].text }} />
-            {workData.moreProjectsSection.projects.map((value, index) => {
-              return <ProjectCard location={value.location} text={value.text.blocks} image={value.image.path} key={index} />
-            })}
+            <div className="projects__projects">
+              {workData.moreProjectsSection.projects.map((value, index) => {
+                return <ProjectCard location={value.location} text={value.text.blocks} image={value.image.path} key={index} />
+              })}
+            </div>
           </div>
         </div>
       </Footer>
