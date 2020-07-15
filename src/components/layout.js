@@ -22,7 +22,7 @@ const Layout = ({ children, path }) => {
 
   const siteData = data.takeshape.getSiteSettings
   return (
-    <>
+    <div>
       <Header 
         path={path}
         siteTitle={siteData.siteTitle} 
@@ -32,7 +32,7 @@ const Layout = ({ children, path }) => {
         linkedInURL={siteData.linkedInUrl} 
       />
       <main>{children}</main>
-    </>
+    </div>
   )
 }
 

@@ -2,6 +2,7 @@
 
   &__content {
     padding-top: 3rem;
+    cursor: pointer;
   }
 
   &__image {
@@ -35,4 +36,73 @@
     border-bottom: 1px -color(cream) solid;
   }
 
+  &__modal {
+    visibility: hidden;
+    opacity: 0;
+
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    min-height: 20rem;
+
+    width: 78vw;
+    background: -color(cream);
+    z-index: 30;
+    border-radius: 10px;
+    box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.4);
+
+    transition: visibility 0s ease-in-out,
+                opacity 0.2s ease-in-out,
+  }
+
+  &__modal__content {
+    padding: 11% 11%;
+  }
+
+  &__modal__title {
+    @include font($weight: 'bold', $size: 1.4rem);
+    color: -color(green);
+    padding-top: 2rem;
+  }
+
+  &__modal__text {
+    @include font($font: fira-sans, $size: 1rem);
+    color: -color(blue);
+    line-height: 1.3rem;
+    padding-top: 1rem;
+  }
+
+  &__hamburger {
+    width:33px;
+    height: 100%;
+    z-index: 4;
+    position: relative;
+    float: right;
+  }
+
+  &__hamburger__line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-bottom: 5px;
+    position: relative;
+    background: -color(green);
+    border-radius: 3px;
+    
+    z-index: 1;
+
+    &:nth-child(1) {
+      transform: translate(0, 0) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      transform: translate(0, -8px) rotate(-45deg);
+    }
+  }
+}
+
+.project-modal-open {
+  visibility: visible;
+  opacity: 1;
 }
