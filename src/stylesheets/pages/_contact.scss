@@ -86,6 +86,7 @@
 
 .work-together {
   background: -color(cream);
+  position: relative;
 
   a {
     color: -color(blue);
@@ -119,7 +120,7 @@
   &__icon__content {
     display: flex;
     padding-top: 4rem;
-    padding-bottom: 10rem;
+    padding-bottom: 11rem;
     justify-content: space-between;
   }
 
@@ -137,7 +138,8 @@
   @include for-tablet-up {
     &__content {
       display: flex;
-      padding: 5rem 0;
+      padding-top: 5rem;
+      padding-bottom: 8rem;
     }
 
     &__icon__content {
@@ -164,7 +166,8 @@
 
   @include for-desktop-up {
     &__content {
-      padding: 7rem 0;
+      padding-top: 7rem;
+      padding-bottom: 13rem;
     }
 
     &__title {
@@ -346,17 +349,15 @@
       padding-left: 3.5rem;
       padding-bottom: 3.5rem;
     }
-
-
-
   }
 }
 
 .faq {
   background: -color(cream);
+  position: relative;
 
   &__content {
-    padding: 8rem 0;
+    padding: 9rem 0;
   }
 
   &__title {
@@ -375,6 +376,10 @@
   }
 
   @include for-desktop-up {
+    &__content {
+      padding: 14.5rem 0;
+    }
+
     &__title {
       @include font($weight: 'bold', $size: 3rem);
       padding-bottom: 6rem;

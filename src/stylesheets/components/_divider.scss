@@ -1,17 +1,21 @@
 .divider {
+  position: absolute;
+  left: 0;
+  right: 0;
   
   img {
     display: block;
     width: 100%;
+    object-fit: contain;
   }
-  
 
   &__top {
     margin-bottom: -3px;
+    bottom: 0;
   }
 
   &__bottom {
     margin-top: -3px;
+    top: 0;
   }
-
 }

@@ -10,7 +10,8 @@ const Hero = ({ tagline, imagePath }) => {
   return (
     <div className="hero">
       <div className="hero__background">
-        <img src={getImageUrl(imagePath)} />
+        <img className="hero__background__image" src={getImageUrl(imagePath)} />
+        <Divider color="green" type="top" />
       </div>
       <Inner>
         <div className="hero__content"> 
@@ -25,7 +26,6 @@ const Hero = ({ tagline, imagePath }) => {
           </div>
         </div>
       </Inner>
-      <Divider color="green" type="top" />
     </div>
   )
 }

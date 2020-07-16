@@ -171,7 +171,7 @@
   }
 
   &__content {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 
   &__title {
@@ -206,7 +206,7 @@
 
   @include for-tablet-up {
     &__content {
-      padding: 5rem 0;
+      padding: 8rem 0;
     }
 
     &__title {
@@ -217,7 +217,7 @@
 
   @include for-desktop-up {
     &__content {
-      padding: 7rem 0;
+      padding: 12.5rem 0;
     }
 
     &__title {
@@ -228,21 +228,14 @@
       @include font($font: fira-sans, $size: 1.1rem);
       padding-top: 1.5rem;
     }
-
-
-
   }
 }
 
 .quote {
-  background: -color(cream);
   position: relative;
   z-index: 1;
-
-  &__wrapper {
-    background: -color(blue);
-  }
-
+  background: -color(blue);
+  
   // carousel styles
 
   &__carousel {
@@ -331,7 +324,7 @@
   }
 
   &__content {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 
   &__title {
@@ -370,7 +363,7 @@
     &__content {
       display: flex;
       justify-content: space-between;
-      padding: 5rem 0;
+      padding: 8rem 0;
     }
 
     &__text__wrapper {
@@ -390,8 +383,8 @@
 
   @include for-desktop-up {
     &__content {
-      padding-top: 5rem;
-      padding-bottom: 7rem;
+      padding-top: 10.5rem;
+      padding-bottom: 12.5rem;
     }
 
     &__text__wrapper {

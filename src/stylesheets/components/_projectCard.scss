@@ -53,7 +53,11 @@
     box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.4);
 
     transition: visibility 0s ease-in-out,
-                opacity 0.2s ease-in-out,
+                opacity 0.2s ease-in-out;
+
+    a {
+      color: -color(blue);
+    }
   }
 
   &__modal__content {
