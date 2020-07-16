@@ -114,6 +114,42 @@
       width: 45%;
     }
   }
+
+  @include for-desktop-up {
+    &__content {
+      padding-top: 11rem;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3.8rem);
+      width: 75%;
+    }
+
+    &__subtitle {
+      @include font($font: fira-sans, $size: 1.1rem, $weight: 'light');
+
+      padding-top: 1.3rem;
+    }
+
+    &__locations {
+      padding-top: 6rem;
+    }
+
+    &__location__title {
+      @include font($weight: 'bold', $size: 2.1rem);
+    }
+
+    &__text {
+      @include font($font: fira-sans, $size: 1rem, $weight: 'light');
+      line-height: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    &__image {
+      width: 26rem;
+    }
+
+  }
 }
 
 .stats {
@@ -166,6 +202,22 @@
     }
   }
 
+  @include for-desktop-up {
+    &__content {
+      padding-top: 2rem;
+      padding-bottom: 10rem;
+    }
+
+    &__value {
+      @include font($weight: 'bold', $size: 3.8rem);
+      padding-top: 1.5rem;
+    }
+
+    &__label {
+      padding-top: 1.5rem;
+    }
+  }
+
 }
 
 .projects {
@@ -184,6 +236,17 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+    }
+  }
+
+  @include for-desktop-up {
+    &__content {
+      padding: 8rem 0;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3rem);
+      padding-bottom: 2rem;
     }
   }
 

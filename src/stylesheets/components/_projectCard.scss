@@ -112,7 +112,7 @@
   }
 
   @include for-tablet-up {
-    width: 31%;
+    width: 32%;
 
     &__modal__content {
       padding: 5%;
@@ -120,6 +120,24 @@
 
     &__hamburger {
       cursor: pointer;
+    }
+  }
+
+  @include for-desktop-up {
+    &__modal__title {
+      @include font($weight: 'bold', $size: 2.1rem);
+      padding-top: 2rem;
+    }
+  
+    &__modal__text {
+      @include font($font: fira-sans, $size: 1.1rem);
+      color: -color(blue);
+      line-height: 1.5rem;
+      padding-top: 1.5rem;
+    }
+
+    &__modal__content {
+      padding: 2rem 3rem;
     }
   }
 }
