@@ -1,0 +1,48 @@
+.introduction {
+  background: -color(cream);
+
+  a {
+    color: -color(blue);
+  }
+
+  &__wrapper:before {
+    content:"";
+    background-color: -color(cream);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+  }
+
+  &__content {
+    padding-top: 3rem;
+  }
+
+  &__intro__title {
+    @include font($weight: 'bold', $size: 2rem);
+    color: -color(green);
+  }
+
+  &__intro__text {
+    @include font($font: fira-sans, $size: 1rem);
+    color: -color(blue);
+    line-height: 1.3rem;
+    padding-top: 2rem;
+  }
+
+  &__intro__image {
+    width: 15rem;
+    margin: 0 auto;
+    padding-top: 4rem;
+    transform: rotate(7deg);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  
+}
