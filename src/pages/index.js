@@ -24,7 +24,6 @@ const Homepage = ({ data, path }) => {
     for (const dot of dots) {
       dot.removeAttribute("tabindex")
     }
-
   }, [])
 
   return (
