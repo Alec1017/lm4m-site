@@ -14,11 +14,12 @@ b::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 60%;
+  top: 22%;
   left: 0;
   z-index: -1;
   
-  background: url('../images/labels/yellow_underline.png') 0 0 no-repeat;
+  background: url('../images/labels/yellow_underline.png') no-repeat;
+  background-position: center bottom;
   background-size: contain;
 }
 

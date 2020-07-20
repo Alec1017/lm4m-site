@@ -134,3 +134,19 @@
     }
   }
 }
+
+.timeline {
+
+  &__content {
+    padding-top: 4rem;
+  }
+
+  &__title {
+    @include font($weight: 'bold', $size: 2.1rem);
+    color: -color(cream);
+  }
+
+  &__cards {
+    padding-top: 4rem;
+  }
+}

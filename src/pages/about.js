@@ -5,12 +5,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Inner from "../components/inner"
 import Footer from "../components/footer"
+import TimelineCard from "../components/timelineCard"
 import Divider from "../components/divider"
 import RedLabel from "../images/labels/red_label_2.png"
 import YellowLabel from "../images/labels/yellow_label.png"
 
 const AboutPage = ({ data, path }) => {
   const aboutDataIntro = data.takeshape.getAbout.introductionSection
+  const aboutDataTimeline = data.takeshape.getAbout.timelineSection
 
   return (
     <Layout path={path}>
@@ -100,7 +102,16 @@ const AboutPage = ({ data, path }) => {
       </div>
 
       <Footer light backgroundColor="green">
-        
+        <div className="timeline">
+          <div className="timeline__content">
+            <div className="timeline__title" dangerouslySetInnerHTML={{ __html: aboutDataTimeline.title.blocks[0].text }} />
+            <div className="timeline__cards">
+              {aboutDataTimeline.card.map((value, index) => {
+                return <TimelineCard key={index} title={value.title} text={value.text} /> 
+              })}
+            </div>
+          </div>
+        </div>
       </Footer>
 
     </Layout>
@@ -145,6 +156,13 @@ export const query = graphql`
             text
             title
           }
+        }
+        timelineSection {
+          card {
+            text
+            title
+          }
+          title
         }
       }
     }
