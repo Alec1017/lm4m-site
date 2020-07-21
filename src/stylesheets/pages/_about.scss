@@ -133,6 +133,50 @@
       color: -color(green)
     }
   }
+
+  @include for-tablet-up {
+    &__content {
+      padding-top: 9rem;
+      padding-bottom: 12rem;
+    }
+
+    &__section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    // Everything but the top section
+  &__section:nth-child(n+2) {
+    padding-top: 8rem;
+  }
+
+    &__section--values {
+      flex-direction: row-reverse;
+    }
+
+    &__text__content {
+      width: 50%;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 2.3rem);
+    }
+
+    &__image__content {
+      margin: 0;
+    }
+
+    &__image__content--left {
+      display: block; 
+      visibility: visible;
+      width: 19rem;
+    }
+
+    &__icon {
+      width: 6rem;
+    }
+  }
 }
 
 .timeline {
