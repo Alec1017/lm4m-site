@@ -12,9 +12,7 @@ const TimelineCard = ({title, text, orientation}) => {
           return <div className="timeline-card__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
         })}
       </div>
-      <div className="timeline-card__rip">
-        <Divider color="green" type="top" />  
-      </div>
+      <Divider color="green" type={orientation} />
     </div>
   )
 }

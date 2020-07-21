@@ -143,6 +143,7 @@
 
   &__title {
     @include font($weight: 'bold', $size: 2.1rem);
+    line-height: 2.4rem;
     color: -color(cream);
   }
 

@@ -1,8 +1,12 @@
 .timeline-card {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   background: -color(cream);
-  padding: 2rem 2.4rem;
   position: relative;
+  min-height: 10rem;
+
+  &__content {
+    padding: 2rem 2.4rem;
+  }
 
   &__title {
     @include font($weight: 'bold', $size: 1.2rem);
@@ -17,9 +21,5 @@
     @include font($font: fira-sans, $size: 0.9rem);
     color: -color(green);
     line-height: 1.3rem;
-  }
-
-  &__rip {
-    transform: rotate(90deg);
   }
 }

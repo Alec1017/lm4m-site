@@ -107,7 +107,7 @@ const AboutPage = ({ data, path }) => {
             <div className="timeline__title" dangerouslySetInnerHTML={{ __html: aboutDataTimeline.title.blocks[0].text }} />
             <div className="timeline__cards">
               {aboutDataTimeline.card.map((value, index) => {
-                return <TimelineCard key={index} title={value.title} text={value.text} /> 
+                return <TimelineCard key={index} title={value.title} text={value.text} orientation={index % 2 == 0 ? 'left' : 'right'} /> 
               })}
             </div>
           </div>
