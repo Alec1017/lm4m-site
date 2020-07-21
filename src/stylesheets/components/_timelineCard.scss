@@ -95,10 +95,35 @@
       width: 10rem;
     }
   }
+
+  @include for-desktop-up {
+    width: 30%;
+
+    &__title {
+      @include font($weight: 'bold', $size: 2.1rem);
+    }
+
+    &__text {
+      @include font($font: fira-sans, $size: 1.1rem);
+      color: -color(green);
+      line-height: 1.5rem;
+    }
+
+  }
 }
 
 .timeline-card--left {
   @include for-tablet-up {
     margin-top: 13rem;
+  }
+
+  @include for-desktop-up {
+    margin-right: 5%;
+  }
+}
+
+.timeline-card--right {
+  @include for-desktop-up {
+    margin-left: 5%;
   }
 }
