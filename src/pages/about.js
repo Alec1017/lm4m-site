@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { getImageUrl } from "takeshape-routing"
 
 import Layout from "../components/layout"
@@ -10,7 +10,10 @@ import Divider from "../components/divider"
 import RedLabel from "../images/labels/red_label_2.png"
 import YellowLabel from "../images/labels/yellow_label.png"
 
+
 const AboutPage = ({ data, path }) => {
+  let timelineCounter = 0;
+
   const aboutDataIntro = data.takeshape.getAbout.introductionSection
   const aboutDataTimeline = data.takeshape.getAbout.timelineSection
 
@@ -107,7 +110,28 @@ const AboutPage = ({ data, path }) => {
             <div className="timeline__title" dangerouslySetInnerHTML={{ __html: aboutDataTimeline.title.blocks[0].text }} />
             <div className="timeline__cards">
               {aboutDataTimeline.card.map((value, index) => {
-                return <TimelineCard key={index} title={value.title} text={value.text} orientation={index % 2 == 0 ? 'left' : 'right'} /> 
+                // Determines the order of sticker types
+                // Red, red, orange, orange, red, red, etc...
+                let stickerType;
+                if (timelineCounter < 2) {
+                  stickerType = 'red'
+                } else {
+                  stickerType = 'orange'
+                }
+
+                if (timelineCounter + 1 == 4) {
+                  timelineCounter = 0;
+                } else {
+                  timelineCounter++
+                }
+
+                return <TimelineCard key={index} 
+                          title={value.title} 
+                          text={value.text} 
+                          orientation={index % 2 == 0 ? 'left' : 'right'} 
+                          stickerType={stickerType}
+                          image={value.image}
+                        /> 
               })}
             </div>
           </div>
@@ -161,6 +185,9 @@ export const query = graphql`
           card {
             text
             title
+            image {
+              path
+            }
           }
           title
         }
