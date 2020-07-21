@@ -27,8 +27,8 @@ const AboutPage = ({ data, path }) => {
             <div className="introduction__content">
 
               <div className="introduction__section introduction__section--intro">
-                <div className="introduction__text__content">
-                  <div className="introduction__title" dangerouslySetInnerHTML={{ __html: aboutDataIntro.introduction.title.blocks[0].text }} />
+                <div className="introduction__text__content introduction__text__content--intro">
+                  <div className="introduction__title introduction__title--intro" dangerouslySetInnerHTML={{ __html: aboutDataIntro.introduction.title.blocks[0].text }} />
                   {aboutDataIntro.introduction.text.blocks.map((value, index) => {
                     return <div className="introduction__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
                   })}

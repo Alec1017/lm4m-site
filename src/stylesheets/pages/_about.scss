@@ -147,9 +147,9 @@
     }
 
     // Everything but the top section
-  &__section:nth-child(n+2) {
-    padding-top: 8rem;
-  }
+    &__section:nth-child(n+2) {
+      padding-top: 8rem;
+    }
 
     &__section--values {
       flex-direction: row-reverse;
@@ -176,6 +176,76 @@
     &__icon {
       width: 6rem;
     }
+  }
+
+  @include for-desktop-up {
+    &__content {
+      padding-top: 14rem;
+      padding-bottom: 17rem;
+    }
+
+    // Everything but the top section
+    &__section:nth-child(n+2) {
+      padding-top: 12rem;
+    }
+
+    &__image__content--right {
+      width: 22rem;
+    }
+
+    &__image__content--left {
+      width: 28rem;
+    }
+
+    &__title {
+      @include font($weight: 'bold', $size: 3rem);
+      line-height: 3rem;
+    }
+
+    &__title--intro {
+      @include font($weight: 'bold', $size: 4.2rem);
+      line-height: 4.2rem !important;
+    }
+
+    &__text__content--intro {
+      padding-bottom: 3rem;
+    }
+
+    &__text {
+      @include font($font: fira-sans, $size: 1.1rem);
+      color: -color(blue);
+      line-height: 1.5rem;
+      padding-top: 3rem;
+      width: 80%;
+    }
+
+    &__icons {
+      padding-top: 4rem;
+    }
+
+    &__icon {
+      width: 8rem;
+    }
+
+    &__button {
+      @include font($font: fira-sans, $size: 1.5rem, $weight: 'bold');
+      margin-top: 4rem;
+    }
+
+    &__sticker--red {
+      width: 10rem;
+      top: -0.5rem;
+      left: -2.5rem;
+      transform: rotate(-32deg);
+    }
+  
+    &__sticker--yellow {
+      width: 9rem;
+      bottom: 0.5rem;
+      right: -1.5rem;
+      transform: rotate(-45deg);
+    }
+
   }
 }
 
