@@ -136,7 +136,7 @@ const AboutPage = ({ data, path }) => {
                 return <TimelineCard key={index} 
                           title={value.title} 
                           text={value.text} 
-                          orientation={index % 2 == 0 ? 'left' : 'right'} 
+                          orientation={index % 2 == 0 ? 'right' : 'left'} 
                           stickerType={stickerType}
                           image={value.image}
                         /> 

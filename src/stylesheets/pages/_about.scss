@@ -194,4 +194,20 @@
   &__cards {
     padding-top: 4rem;
   }
+
+  @include for-tablet-up {
+    &__title {
+      @include font($weight: 'bold', $size: 2.3rem);
+      width: 50%;
+    }
+
+    &__cards {
+      padding-top: 12rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-bottom: 4rem;
+    }
+
+  }
 }

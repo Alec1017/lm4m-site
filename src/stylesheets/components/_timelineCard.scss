@@ -55,13 +55,23 @@
   }
 
   @include for-tablet-up {
+    width: 40%;
+    height: max-content;
+    margin-bottom: 0;
+
+    &__title {
+      @include font($weight: 'bold', $size: 1.8rem);
+      line-height: 2rem;
+    }
+
+
     &__image {
       display: block;
       visibility: visible;
       position: absolute;
-      width: 8rem;
-      right: 0;
-      top: 0;
+      width: 10rem;
+      right: -4rem;
+      top: -35%;
   
   
       img {
@@ -70,5 +80,25 @@
         object-fit: contain;
       }
     }
+
+    &__sticker--red {
+      right: -2rem;
+      top: -2rem;
+  
+      width: 6rem;
+    }
+  
+    &__sticker--orange {
+      right: -2.5rem;
+      top: 0;
+  
+      width: 10rem;
+    }
+  }
+}
+
+.timeline-card--left {
+  @include for-tablet-up {
+    margin-top: 13rem;
   }
 }
