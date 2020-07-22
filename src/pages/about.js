@@ -187,6 +187,7 @@ export const query = graphql`
             }
             text
             title
+            email
           }
         }
         timelineSection {

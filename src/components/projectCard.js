@@ -42,7 +42,7 @@ const ProjectCard = ({ image, location, text }) => {
           })}
         </div>
       </div>
-      <div className={`project-card__modal__overlay${isOpen ? ' project-modal-open' : ''}`}></div>
+      <div className={`project-card__modal__overlay${isOpen ? ' project-modal-open' : ''}`} onClick={() => closeModal()}></div>
     </div>
   )
 }
