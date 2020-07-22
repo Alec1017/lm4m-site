@@ -62,7 +62,7 @@ const Homepage = ({ data, path }) => {
             </div>
           </div>
 
-          <div className="map">
+          <div className="map" id="map">
             <div className="map__wrapper">
               <Divider color="green" type="bottom" />
               <Inner>
@@ -76,6 +76,7 @@ const Homepage = ({ data, path }) => {
                       <Tooltip data="Thessaloniki, Greece" top={36} left={53.6} />
                       <Tooltip data="Kent, UK" top={28} left={45.5} />
                       <Tooltip data="Andhra Pradesh, India" top={48} left={70.25} />
+                      <Tooltip data="Boston, Massachusetts" top={33} left={27.5} />
                     </div>
                     <img src={getImageUrl(homepageData.mapSection.image.path)} />
                   </div>
