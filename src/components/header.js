@@ -9,47 +9,58 @@ import LinkedIn from "../images/vectors/linkedin.svg"
 import Inner from "./inner"
 
 const lightRoutes = ['/', '/work/']
-const root = document.getElementsByTagName('html')[0];
 
 const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donateURL }) => {
   const [toggled, setToggled] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const [prevScroll, setPrevScroll] = useState(0)
   const [toggleLight, setToggleLight] = useState(true)
+  const root = (typeof window !== "undefined" && window.document) ? document.getElementsByTagName('html')[0] : null;
 
   const toggleHamburger = () => {
-    if (toggled) {
-      setToggled(false)
-      root.classList.remove('stop-scroll')
-    } else {
-      setToggled(true)
-      root.setAttribute('class', 'stop-scroll')
+    if (typeof window !== "undefined" && window.document) {
+      if (toggled) {
+        setToggled(false)
+        root.classList.remove('stop-scroll')
+      } else {
+        setToggled(true)
+        root.setAttribute('class', 'stop-scroll')
+      }
     }
   }
   
 
   const showHeader = () => {
-    if (window.scrollY > prevScroll) {
-      setIsScrolling(true)
-    } else {
-      setIsScrolling(false)
+    if (typeof window !== "undefined" && window.document) {
+      if (window.scrollY > prevScroll) {
+        setIsScrolling(true)
+      } else {
+        setIsScrolling(false)
+      }
+  
+      setPrevScroll(window.scrollY)
     }
-
-    setPrevScroll(window.scrollY)
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', showHeader)
+    if (typeof window === "undefined" || !window.document) {
+      return
+    } else  {
 
-    if (lightRoutes.includes(path)) {
-      setToggleLight(true)
-    } else {
-      setToggleLight(false)
+      window.addEventListener('scroll', showHeader)
+
+      if (lightRoutes.includes(path)) {
+        setToggleLight(true)
+      } else {
+        setToggleLight(false)
+      }
     }
 
     return () => {
-      window.removeEventListener('scroll', showHeader)
-      root.classList.remove('stop-scroll')
+      if (typeof window !== "undefined" && window.document) {
+        window.removeEventListener('scroll', showHeader)
+        root.classList.remove('stop-scroll')
+      } 
     }
   }, [])
 
