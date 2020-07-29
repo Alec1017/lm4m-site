@@ -16,6 +16,10 @@
     border-bottom: 1px -color(blue) solid;
   }
 
+  &__inner--last {
+    border-bottom: none !important;
+  }
+
   &__question {
     display: flex;
     justify-content: space-between;

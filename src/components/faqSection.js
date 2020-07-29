@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 
-const FAQSection = ({question, answer}) => {
+const FAQSection = ({question, answer, lastFAQ}) => {
   const [isOpen, setIsOpen] = useState(false)
 
 
   return (
     <div className="faq-section">
-      <div className="faq-section__inner">
+      <div className={`faq-section__inner${lastFAQ ? ' faq-section__inner--last' : ''}`}>
         <div className="faq-section__question" onClick={() => setIsOpen(!isOpen)}>
           <div className="faq-section__title">{question}</div>
           <div className="faq-section__button__content">

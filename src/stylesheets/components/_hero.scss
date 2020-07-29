@@ -25,24 +25,21 @@
     }
   }
 
-  &__content {
-    padding-top: 30vh;
-  }
-
   &__title {
     @include font($weight: 'bold', $size: 2.4rem);
-    color: -color(white)
+    color: -color(white);
+
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+
   }
 
   @include for-tablet-up {
     height: 100vh;
 
-    &__content {
-      padding-top: 40vh;
-    }
-
     &__content__inner {
-      margin-left: auto;
+      margin: 0 auto;
       width: 90%;
     }
 

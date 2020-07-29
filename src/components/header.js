@@ -87,12 +87,12 @@ const Header = ({ path, siteTitle, facebookURL, instagramURL, linkedInURL, donat
           <ul className={`header__list ${toggled ? 'toggled-list' : ''}`}>
             <li>
               <div className="header__link">
-                <Link activeClassName="active-link" to="/work">Our Work</Link>
+                <Link activeClassName="active-link" to="/about">About Us</Link>
               </div>
             </li>
             <li>
               <div className="header__link">
-                <Link activeClassName="active-link" to="/about">About Us</Link>
+                <Link activeClassName="active-link" to="/work">Our Work</Link>
               </div>
             </li>
             <li>

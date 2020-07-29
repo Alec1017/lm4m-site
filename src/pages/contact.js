@@ -122,8 +122,8 @@ const ContactPage = ({ data, path }) => {
                 <div className="faq__content">
                   <div className="faq__title" dangerouslySetInnerHTML={{ __html: contactData.faqSection.title.blocks[0].text }} />
                   <div className="faq__qna">
-                    {contactData.faqSection.qnA.map((qna, index) => {
-                      return <FAQSection question={qna.question} answer={qna.answer} key={index} />
+                    {contactData.faqSection.qnA.map((qna, index, arr) => {
+                      return <FAQSection question={qna.question} answer={qna.answer} key={index} lastFAQ={index === arr.length - 1} />
                     })}
                   </div>
                 </div>
