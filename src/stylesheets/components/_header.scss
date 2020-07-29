@@ -245,7 +245,7 @@
   }
 
   @include for-desktop-up {
-    height: initial;
+    height: $desktop-header-height;
 
     &__logo {
       width: 60px;

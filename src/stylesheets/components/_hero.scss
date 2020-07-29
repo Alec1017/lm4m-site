@@ -25,27 +25,31 @@
     }
   }
 
+  &__content {
+    padding-top: calc(50vh - #{$mobile-header-height});
+  }
+
   &__title {
     @include font($weight: 'bold', $size: 2.4rem);
     color: -color(white);
 
-    position: absolute;
-    top: 50vh;
     transform: translateY(-50%);
-
   }
 
   @include for-tablet-up {
     height: 100vh;
 
+    &__content {
+      padding-top: 50vh;
+    }
+
     &__content__inner {
-      margin: 0 auto;
+      margin-left: auto;
       width: 90%;
     }
 
     &__title {
       @include font($weight: 'bold', $size: 3.3rem);
-      display: inline;
     }
 
   }

@@ -17,11 +17,13 @@ const Hero = ({ tagline, imagePath }) => {
         <div className="hero__content"> 
           <div className="hero__content__inner">
             <div className="hero__title">
-              {tagline.split(' ').slice(0, -1).join(' ')}
-              &nbsp;
-              <Highlight type="red">
-                {tagline.split(' ').slice(-1)[0]}
-              </Highlight>
+              <div>
+                {tagline.split(' ').slice(0, -1).join(' ')}
+                &nbsp;
+                <Highlight type="red">
+                  {tagline.split(' ').slice(-1)[0]}
+                </Highlight>
+              </div>
             </div>
           </div>
         </div>
