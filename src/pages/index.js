@@ -94,9 +94,11 @@ const Homepage = ({ data, path }) => {
                 {homepageData.quoteSection.quoteSlide[0].quote.blocks.map((value, index) => {
                   return <div className="quote__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
                 })}
-                <div className="quote__image">
-                  <img src={getImageUrl(homepageData.quoteSection.quoteSlide[0].sourceImage.path)} alt=""/>
-                </div>
+                <a href={homepageData.quoteSection.quoteSlide[0].articleLink}>
+                  <div className="quote__image">
+                    <img src={getImageUrl(homepageData.quoteSection.quoteSlide[0].sourceImage.path)} alt=""/>
+                  </div>
+                </a>
               </div>
                 <Carousel autoPlay infiniteLoop={true} interval={8000} showArrows={false} showStatus={false} showThumbs={false} className="quote__carousel">
                   {homepageData.quoteSection.quoteSlide.map((value, index) => {
@@ -105,9 +107,11 @@ const Homepage = ({ data, path }) => {
                         {value.quote.blocks.map((value, index) => {
                           return <div className="quote__text" key={index} dangerouslySetInnerHTML={{ __html: value.text }} />
                         })}
-                        <div className="quote__image">
-                          <img src={getImageUrl(value.sourceImage.path)} alt=""/>
-                        </div>
+                        <a href={value.articleLink}>
+                          <div className="quote__image">
+                              <img src={getImageUrl(value.sourceImage.path)} alt=""/>
+                          </div>
+                        </a>
                       </div>
                     )
                   })}
@@ -176,6 +180,7 @@ export const query = graphql`
             sourceImage {
               path
             }
+            articleLink
           }
         }
         storiesSection {
