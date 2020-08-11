@@ -51,12 +51,12 @@ const Footer = ({children, light, backgroundColor}) => {
               <ul className="footer__list">
                 <li>
                   <div className={`footer__link ${light === true ? 'footer__link--light' : 'footer__link--dark'}`}>
-                    <Link to="/work">Our Work</Link>
+                    <Link to="/about">About Us</Link>
                   </div>
                 </li>
                 <li>
                   <div className={`footer__link ${light === true ? 'footer__link--light' : 'footer__link--dark'}`}>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/work">Our Work</Link>
                   </div>
                 </li>
                 <li>
